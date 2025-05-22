@@ -5,6 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Biomagnetismo Medicinal - Terapeutas Montini</title>
         <style>
+            * {
+                box-sizing: border-box;
+            }
+
             body {
                 margin: 0;
                 padding: 20px;
@@ -21,9 +25,10 @@
                 border-radius: 20px;
                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
                 overflow: hidden;
-                max-width: 400px;
+                max-width: 500px;
                 width: 100%;
                 position: relative;
+                animation: slideUp 0.6s ease-out;
             }
 
             .header {
@@ -189,14 +194,56 @@
                 text-align: center;
             }
 
-            /* Responsive design */
-            @media (max-width: 480px) {
-                body {
-                    padding: 10px;
-                }
+            .btn-group {
+                text-align: center;
+                margin-top: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
 
+            .btn-group button {
+                background: #667eea;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 14px;
+                transition: background 0.3s ease;
+            }
+
+            .btn-group button:nth-child(2) {
+                background: #25d366;
+            }
+
+            .btn-group button:nth-child(3) {
+                background: #ff6b6b;
+            }
+
+            .btn-group button:hover {
+                opacity: 0.9;
+            }
+
+            .info-box {
+                text-align: center;
+                margin-top: 15px;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+                background: #e3f2fd;
+                border: 1px solid #2196f3;
+                border-radius: 10px;
+                padding: 15px;
+                font-size: 14px;
+                color: #1976d2;
+            }
+
+            /* Responsive: Tablets */
+            @media (max-width: 768px) {
                 .flyer {
-                    max-width: 100%;
+                    max-width: 95%;
                 }
 
                 .title {
@@ -204,13 +251,56 @@
                 }
 
                 .content {
-                    padding: 20px;
+                    padding: 25px 20px;
+                }
+
+                .logo-placeholder {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                .logo-placeholder img {
+                    width: 55px;
+                    height: 55px;
+                }
+
+                .info-box {
+                    font-size: 13px;
                 }
             }
 
-            /* Animation for entrance */
-            .flyer {
-                animation: slideUp 0.6s ease-out;
+            /* Responsive: Celulares */
+            @media (max-width: 480px) {
+                body {
+                    padding: 10px;
+                }
+
+                .title {
+                    font-size: 22px;
+                }
+
+                .info-section h4 {
+                    font-size: 14px;
+                }
+
+                .info-section p {
+                    font-size: 14px;
+                }
+
+                .phone {
+                    font-size: 16px;
+                    padding: 8px 16px;
+                }
+
+                .btn-group button {
+                    padding: 8px 16px;
+                    font-size: 13px;
+                }
+
+                .whatsapp-btn {
+                    font-size: 14px;
+                    padding: 12px;
+                }
             }
 
             @keyframes slideUp {
@@ -268,84 +358,25 @@
                 <div class="edit-note">
                     <strong>💡 Nota:</strong> Para cambiar las fechas cada mes,
                     simplemente modifica el texto en la sección "Próximas
-                    Fechas" haciendo clic en el botón "Editar Fechas" que
-                    aparece abajo.
+                    Fechas".
                 </div>
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 20px">
-            <button
-                onclick="editDates()"
-                style="
-                    background: #667eea;
-                    color: white;
-                    border: none;
-                    padding: 10px 20px;
-                    border-radius: 20px;
-                    cursor: pointer;
-                    font-size: 14px;
-                "
-            >
-                ✏️ Editar Fechas
-            </button>
-            <button
-                onclick="shareOnWhatsApp()"
-                style="
-                    background: #25d366;
-                    color: white;
-                    border: none;
-                    padding: 10px 20px;
-                    border-radius: 20px;
-                    cursor: pointer;
-                    font-size: 14px;
-                    margin-left: 10px;
-                "
-            >
+        <div class="btn-group">
+            <button onclick="editDates()">✏️ Editar Fechas</button>
+            <button onclick="shareOnWhatsApp()">
                 📤 Compartir por WhatsApp
             </button>
-            <button
-                onclick="copyLink()"
-                style="
-                    background: #ff6b6b;
-                    color: white;
-                    border: none;
-                    padding: 10px 20px;
-                    border-radius: 20px;
-                    cursor: pointer;
-                    font-size: 14px;
-                    margin-left: 10px;
-                "
-            >
-                🔗 Copiar Link
-            </button>
+            <button onclick="copyLink()">🔗 Copiar Link</button>
         </div>
 
-        <div
-            style="
-                text-align: center;
-                margin-top: 15px;
-                max-width: 400px;
-                margin-left: auto;
-                margin-right: auto;
-            "
-        >
-            <div
-                style="
-                    background: #e3f2fd;
-                    border: 1px solid #2196f3;
-                    border-radius: 10px;
-                    padding: 15px;
-                    font-size: 14px;
-                    color: #1976d2;
-                "
-            >
-                <strong>💡 Cómo funciona:</strong><br />
-                1. Haz clic en "Compartir por WhatsApp"<br />
-                2. El mensaje incluirá un link al volante completo<br />
-                3. Quien haga clic verá el diseño con todos los colores<br />
-                4. También puedes copiar el link y enviarlo por separado
-            </div>
+        <div class="info-box">
+            <strong>💡 Cómo funciona:</strong><br />
+            1. Haz clic en "Compartir por WhatsApp"<br />
+            2. El mensaje incluirá un link al volante completo<br />
+            3. Quien haga clic verá el diseño con todos los colores<br />
+            4. También puedes copiar el link y enviarlo por separado
         </div>
 
         <script>
@@ -363,8 +394,6 @@
             function shareOnWhatsApp() {
                 const dateText =
                     document.getElementById("dateText").textContent;
-
-                // Crear un link personalizado (simulado)
                 const currentUrl = window.location.href;
                 const shortLink = generateShortLink(currentUrl);
 
@@ -396,21 +425,11 @@ Terapia natural para el bienestar integral.
             }
 
             function copyLink() {
-                const currentUrl = window.location.href;
-                const shortLink = generateShortLink(currentUrl);
-
-                // Intentar copiar al portapapeles
+                const shortLink = generateShortLink(window.location.href);
                 if (navigator.clipboard) {
-                    navigator.clipboard
-                        .writeText(shortLink)
-                        .then(() => {
-                            alert(
-                                "¡Link copiado al portapapeles!\n\nPuedes pegarlo en WhatsApp, redes sociales o donde quieras compartirlo."
-                            );
-                        })
-                        .catch(() => {
-                            fallbackCopyTextToClipboard(shortLink);
-                        });
+                    navigator.clipboard.writeText(shortLink).then(() => {
+                        alert("¡Link copiado al portapapeles!");
+                    });
                 } else {
                     fallbackCopyTextToClipboard(shortLink);
                 }
@@ -422,31 +441,13 @@ Terapia natural para el bienestar integral.
                 document.body.appendChild(textArea);
                 textArea.focus();
                 textArea.select();
-
                 try {
                     document.execCommand("copy");
-                    alert(
-                        "¡Link copiado!\n\n" +
-                            text +
-                            "\n\nPuedes pegarlo donde quieras compartirlo."
-                    );
+                    alert("¡Link copiado!");
                 } catch (err) {
-                    alert(
-                        "Link para compartir:\n\n" +
-                            text +
-                            "\n\nCopia este link manualmente."
-                    );
+                    alert("Link:\n\n" + text);
                 }
-
                 document.body.removeChild(textArea);
-            }
-
-            // Función para capturar como imagen (para compartir)
-            function downloadAsImage() {
-                // Esta función requeriría una librería adicional como html2canvas
-                alert(
-                    "Para descargar como imagen, puedes usar la función de captura de pantalla de tu dispositivo o imprimir como PDF."
-                );
             }
         </script>
     </body>
