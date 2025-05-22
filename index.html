@@ -240,7 +240,7 @@
 
         <div class="btn-group">
             <button onclick="editDates()">✏️ Editar Fechas</button>
-            <button onclick="shareOnWhatsApp()">
+            <button onclick="shareInWhatsApp()">
                 📤 Compartir por WhatsApp
             </button>
             <button onclick="copyLink()">🔗 Copiar Link</button>
@@ -274,6 +274,14 @@
                     }
                 });
             });
+
+            function shareInWhatsApp() {
+                const mensaje = encodeURIComponent(
+                    "🌿 Descubrí los beneficios del biomagnetismo medicinal.\nReservá tu sesión en Buenos Aires. Más info acá 👉 https://maps.app.goo.gl/M6kWR3Yv2jCjZAL99"
+                );
+                const url = `https://wa.me/?text=${mensaje}`;
+                window.open(url, "_blank");
+            }
 
             function abrirMapa() {
                 const url = "https://maps.app.goo.gl/M6kWR3Yv2jCjZAL99";
