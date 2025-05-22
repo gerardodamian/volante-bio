@@ -1,310 +1,374 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biomagnetismo Medicinal - Terapeutas Montini</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .flyer {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-            max-width: 400px;
-            width: 100%;
-            position: relative;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            padding: 30px 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        .logo-placeholder {
-            width: 80px;
-            height: 80px;
-            background: rgba(255,255,255,0.2);
-            border: 3px solid white;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: white;
-            font-weight: bold;
-            overflow: hidden;
-        }
-
-        .logo-placeholder img {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .title {
-            color: white;
-            font-size: 28px;
-            font-weight: bold;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            line-height: 1.2;
-        }
-
-        .content {
-            padding: 30px 25px;
-        }
-
-        .therapists {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .therapists h3 {
-            color: #333;
-            font-size: 20px;
-            margin: 0 0 10px 0;
-            font-weight: bold;
-        }
-
-        .therapists p {
-            color: #666;
-            font-size: 18px;
-            margin: 0;
-            font-weight: 500;
-        }
-
-        .info-section {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 5px solid #4facfe;
-        }
-
-        .dates {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            color: #8b4513;
-            text-align: center;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .location {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            color: #2c3e50;
-        }
-
-        .contact {
-            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
-            color: #7b1fa2;
-            text-align: center;
-        }
-
-        .info-section h4 {
-            margin: 0 0 10px 0;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .info-section p {
-            margin: 5px 0;
-            font-size: 16px;
-            line-height: 1.4;
-        }
-
-        .phone {
-            font-size: 20px;
-            font-weight: bold;
-            color: #e91e63;
-            text-decoration: none;
-            display: inline-block;
-            margin: 10px 0;
-            padding: 10px 20px;
-            background: white;
-            border-radius: 25px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .phone:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-        }
-
-        .whatsapp-btn {
-            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin: 20px 0 0 0;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(37, 211, 102, 0.4);
-        }
-
-        .decorative-element {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            top: -50px;
-            right: -50px;
-        }
-
-        .edit-note {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #856404;
-            text-align: center;
-        }
-
-        /* Responsive design */
-        @media (max-width: 480px) {
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Biomagnetismo Medicinal - Terapeutas Montini</title>
+        <style>
             body {
-                padding: 10px;
-            }
-            
-            .flyer {
-                max-width: 100%;
-            }
-            
-            .title {
-                font-size: 24px;
-            }
-            
-            .content {
+                margin: 0;
                 padding: 20px;
+                font-family: "Arial", sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
-        }
 
-        /* Animation for entrance */
-        .flyer {
-            animation: slideUp 0.6s ease-out;
-        }
+            .flyer {
+                background: white;
+                border-radius: 20px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                max-width: 400px;
+                width: 100%;
+                position: relative;
+            }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+            .header {
+                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                padding: 30px 20px;
+                text-align: center;
+                position: relative;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            .logo-placeholder {
+                width: 80px;
+                height: 80px;
+                background: rgba(255, 255, 255, 0.2);
+                border: 3px solid white;
+                border-radius: 50%;
+                margin: 0 auto 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                color: white;
+                font-weight: bold;
+                overflow: hidden;
             }
-        }
-    </style>
-</head>
-<body>
-    <div class="flyer">
-        <div class="header">
-            <div class="decorative-element"></div>
-            <div class="logo-placeholder">
-                <img src="images/5bb3af021b95fa1598792207.jpg" alt="Biomagnetismo Logo">
+
+            .logo-placeholder img {
+                width: 60px;
+                height: 60px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            .title {
+                color: white;
+                font-size: 28px;
+                font-weight: bold;
+                margin: 0;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                line-height: 1.2;
+            }
+
+            .content {
+                padding: 30px 25px;
+            }
+
+            .therapists {
+                text-align: center;
+                margin-bottom: 25px;
+            }
+
+            .therapists h3 {
+                color: #333;
+                font-size: 20px;
+                margin: 0 0 10px 0;
+                font-weight: bold;
+            }
+
+            .therapists p {
+                color: #666;
+                font-size: 18px;
+                margin: 0;
+                font-weight: 500;
+            }
+
+            .info-section {
+                background: #f8f9fa;
+                border-radius: 15px;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-left: 5px solid #4facfe;
+            }
+
+            .dates {
+                background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+                color: #8b4513;
+                text-align: center;
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            .location {
+                background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+                color: #2c3e50;
+            }
+
+            .contact {
+                background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+                color: #7b1fa2;
+                text-align: center;
+            }
+
+            .info-section h4 {
+                margin: 0 0 10px 0;
+                font-size: 16px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .info-section p {
+                margin: 5px 0;
+                font-size: 16px;
+                line-height: 1.4;
+            }
+
+            .phone {
+                font-size: 20px;
+                font-weight: bold;
+                color: #e91e63;
+                text-decoration: none;
+                display: inline-block;
+                margin: 10px 0;
+                padding: 10px 20px;
+                background: white;
+                border-radius: 25px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+
+            .phone:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .whatsapp-btn {
+                background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+                color: white;
+                text-align: center;
+                padding: 15px;
+                margin: 20px 0 0 0;
+                border-radius: 30px;
+                font-weight: bold;
+                font-size: 16px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+            }
+
+            .whatsapp-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 16px rgba(37, 211, 102, 0.4);
+            }
+
+            .decorative-element {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                top: -50px;
+                right: -50px;
+            }
+
+            .edit-note {
+                background: #fff3cd;
+                border: 1px solid #ffeaa7;
+                border-radius: 10px;
+                padding: 15px;
+                margin-top: 20px;
+                font-size: 14px;
+                color: #856404;
+                text-align: center;
+            }
+
+            /* Responsive design */
+            @media (max-width: 480px) {
+                body {
+                    padding: 10px;
+                }
+
+                .flyer {
+                    max-width: 100%;
+                }
+
+                .title {
+                    font-size: 24px;
+                }
+
+                .content {
+                    padding: 20px;
+                }
+            }
+
+            /* Animation for entrance */
+            .flyer {
+                animation: slideUp 0.6s ease-out;
+            }
+
+            @keyframes slideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flyer">
+            <div class="header">
+                <div class="decorative-element"></div>
+                <div class="logo-placeholder">
+                    <img
+                        src="images/5bb3af021b95fa1598792207.jpg"
+                        alt="Biomagnetismo Logo"
+                    />
+                </div>
+                <h1 class="title">BIOMAGNETISMO MEDICINAL</h1>
             </div>
-            <h1 class="title">BIOMAGNETISMO MEDICINAL</h1>
+
+            <div class="content">
+                <div class="therapists">
+                    <h3>Terapeutas</h3>
+                    <p>Analía y Gerardo Montini</p>
+                </div>
+
+                <div class="info-section dates" id="dateSection">
+                    <h4>📅 Próximas Fechas</h4>
+                    <p id="dateText">16, 17 y 18 de Junio</p>
+                </div>
+
+                <div class="info-section location">
+                    <h4>📍 Ubicación</h4>
+                    <p>Joaquín V. González 386<br />La Rioja</p>
+                </div>
+
+                <div class="info-section contact">
+                    <h4>💬 Reservá tu Turno</h4>
+                    <a href="https://wa.me/5493827400933" class="phone"
+                        >3827-400933</a
+                    >
+                </div>
+
+                <div class="whatsapp-btn" onclick="shareOnWhatsApp()">
+                    📱 Sacar Turno por WhatsApp
+                </div>
+
+                <div class="edit-note">
+                    <strong>💡 Nota:</strong> Para cambiar las fechas cada mes,
+                    simplemente modifica el texto en la sección "Próximas
+                    Fechas" haciendo clic en el botón "Editar Fechas" que
+                    aparece abajo.
+                </div>
+            </div>
         </div>
-        
-        <div class="content">
-            <div class="therapists">
-                <h3>Terapeutas</h3>
-                <p>Analía y Gerardo Montini</p>
-            </div>
 
-            <div class="info-section dates" id="dateSection">
-                <h4>📅 Próximas Fechas</h4>
-                <p id="dateText">16, 17 y 18 de Junio</p>
-            </div>
+        <div style="text-align: center; margin-top: 20px">
+            <button
+                onclick="editDates()"
+                style="
+                    background: #667eea;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-size: 14px;
+                "
+            >
+                ✏️ Editar Fechas
+            </button>
+            <button
+                onclick="shareOnWhatsApp()"
+                style="
+                    background: #25d366;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    margin-left: 10px;
+                "
+            >
+                📤 Compartir por WhatsApp
+            </button>
+            <button
+                onclick="copyLink()"
+                style="
+                    background: #ff6b6b;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    margin-left: 10px;
+                "
+            >
+                🔗 Copiar Link
+            </button>
+        </div>
 
-            <div class="info-section location">
-                <h4>📍 Ubicación</h4>
-                <p>Joaquín V. González 386<br>La Rioja</p>
-            </div>
-
-            <div class="info-section contact">
-                <h4>💬 Reservá tu Turno</h4>
-                <a href="https://wa.me/5493827400933" class="phone">3827-400933</a>
-            </div>
-
-            <div class="whatsapp-btn" onclick="shareOnWhatsApp()">
-                📱 Sacar Turno por WhatsApp
-            </div>
-
-            <div class="edit-note">
-                <strong>💡 Nota:</strong> Para cambiar las fechas cada mes, simplemente modifica el texto en la sección "Próximas Fechas" haciendo clic en el botón "Editar Fechas" que aparece abajo.
+        <div
+            style="
+                text-align: center;
+                margin-top: 15px;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            "
+        >
+            <div
+                style="
+                    background: #e3f2fd;
+                    border: 1px solid #2196f3;
+                    border-radius: 10px;
+                    padding: 15px;
+                    font-size: 14px;
+                    color: #1976d2;
+                "
+            >
+                <strong>💡 Cómo funciona:</strong><br />
+                1. Haz clic en "Compartir por WhatsApp"<br />
+                2. El mensaje incluirá un link al volante completo<br />
+                3. Quien haga clic verá el diseño con todos los colores<br />
+                4. También puedes copiar el link y enviarlo por separado
             </div>
         </div>
-    </div>
 
-    <div style="text-align: center; margin-top: 20px;">
-        <button onclick="editDates()" style="background: #667eea; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px;">
-            ✏️ Editar Fechas
-        </button>
-        <button onclick="shareOnWhatsApp()" style="background: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-left: 10px;">
-            📤 Compartir por WhatsApp
-        </button>
-        <button onclick="copyLink()" style="background: #ff6b6b; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-left: 10px;">
-            🔗 Copiar Link
-        </button>
-    </div>
-
-    <div style="text-align: center; margin-top: 15px; max-width: 400px; margin-left: auto; margin-right: auto;">
-        <div style="background: #e3f2fd; border: 1px solid #2196f3; border-radius: 10px; padding: 15px; font-size: 14px; color: #1976d2;">
-            <strong>💡 Cómo funciona:</strong><br>
-            1. Haz clic en "Compartir por WhatsApp"<br>
-            2. El mensaje incluirá un link al volante completo<br>
-            3. Quien haga clic verá el diseño con todos los colores<br>
-            4. También puedes copiar el link y enviarlo por separado
-        </div>
-    </div>
-
-    <script>
-        function editDates() {
-            const dateText = document.getElementById('dateText');
-            const newDates = prompt('Ingresa las nuevas fechas:', dateText.textContent);
-            if (newDates && newDates.trim() !== '') {
-                dateText.textContent = newDates;
+        <script>
+            function editDates() {
+                const dateText = document.getElementById("dateText");
+                const newDates = prompt(
+                    "Ingresa las nuevas fechas:",
+                    dateText.textContent
+                );
+                if (newDates && newDates.trim() !== "") {
+                    dateText.textContent = newDates;
+                }
             }
-        }
 
-        function shareOnWhatsApp() {
-            const dateText = document.getElementById('dateText').textContent;
-            
-            // Crear un link personalizado (simulado)
-            const currentUrl = window.location.href;
-            const shortLink = generateShortLink(currentUrl);
-            
-            const message = `🧲 *BIOMAGNETISMO MEDICINAL* 🧲
+            function shareOnWhatsApp() {
+                const dateText =
+                    document.getElementById("dateText").textContent;
+
+                // Crear un link personalizado (simulado)
+                const currentUrl = window.location.href;
+                const shortLink = generateShortLink(currentUrl);
+
+                const message = `🧲 *BIOMAGNETISMO MEDICINAL* 🧲
 
 👨‍⚕️👩‍⚕️ *Terapeutas: Analía y Gerardo Montini*
 
@@ -321,54 +385,69 @@ Terapia natural para el bienestar integral.
 
 #BiomagnetismoMedicinal #TerapiaNatural #LaRioja`;
 
-            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        }
+                const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(
+                    message
+                )}`;
+                window.open(whatsappUrl, "_blank");
+            }
 
-        function generateShortLink(url) {
-            // En un entorno real, usarías un servicio como bit.ly o tinyurl
-            // Aquí simulamos un link corto
-            return `gerardodamian.github.io/volante-bio/`;
-        }
+            function generateShortLink(url) {
+                return `https://gerardodamian.github.io/volante-bio/`;
+            }
 
-        function copyLink() {
-            const currentUrl = window.location.href;
-            const shortLink = generateShortLink(currentUrl);
-            
-            // Intentar copiar al portapapeles
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(shortLink).then(() => {
-                    alert('¡Link copiado al portapapeles!\n\nPuedes pegarlo en WhatsApp, redes sociales o donde quieras compartirlo.');
-                }).catch(() => {
+            function copyLink() {
+                const currentUrl = window.location.href;
+                const shortLink = generateShortLink(currentUrl);
+
+                // Intentar copiar al portapapeles
+                if (navigator.clipboard) {
+                    navigator.clipboard
+                        .writeText(shortLink)
+                        .then(() => {
+                            alert(
+                                "¡Link copiado al portapapeles!\n\nPuedes pegarlo en WhatsApp, redes sociales o donde quieras compartirlo."
+                            );
+                        })
+                        .catch(() => {
+                            fallbackCopyTextToClipboard(shortLink);
+                        });
+                } else {
                     fallbackCopyTextToClipboard(shortLink);
-                });
-            } else {
-                fallbackCopyTextToClipboard(shortLink);
+                }
             }
-        }
 
-        function fallbackCopyTextToClipboard(text) {
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            
-            try {
-                document.execCommand('copy');
-                alert('¡Link copiado!\n\n' + text + '\n\nPuedes pegarlo donde quieras compartirlo.');
-            } catch (err) {
-                alert('Link para compartir:\n\n' + text + '\n\nCopia este link manualmente.');
+            function fallbackCopyTextToClipboard(text) {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+
+                try {
+                    document.execCommand("copy");
+                    alert(
+                        "¡Link copiado!\n\n" +
+                            text +
+                            "\n\nPuedes pegarlo donde quieras compartirlo."
+                    );
+                } catch (err) {
+                    alert(
+                        "Link para compartir:\n\n" +
+                            text +
+                            "\n\nCopia este link manualmente."
+                    );
+                }
+
+                document.body.removeChild(textArea);
             }
-            
-            document.body.removeChild(textArea);
-        }
 
-        // Función para capturar como imagen (para compartir)
-        function downloadAsImage() {
-            // Esta función requeriría una librería adicional como html2canvas
-            alert('Para descargar como imagen, puedes usar la función de captura de pantalla de tu dispositivo o imprimir como PDF.');
-        }
-    </script>
-</body>
+            // Función para capturar como imagen (para compartir)
+            function downloadAsImage() {
+                // Esta función requeriría una librería adicional como html2canvas
+                alert(
+                    "Para descargar como imagen, puedes usar la función de captura de pantalla de tu dispositivo o imprimir como PDF."
+                );
+            }
+        </script>
+    </body>
 </html>
