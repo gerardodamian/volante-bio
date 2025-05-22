@@ -1,26 +1,30 @@
+/* Reset box sizing para todos */
 * {
   box-sizing: border-box;
 }
 
+/* Estilos base del body */
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #5c6bc0, #8e24aa);
   color: #333;
-  overflow-x: hidden; /* Esto previene el scroll horizontal */
+  overflow-x: hidden; /* Evita scroll horizontal */
 }
 
+/* Contenedor principal */
 .flyer {
-  max-width: 480px; /* o 100%, si prefieres */
+  max-width: 480px; /* ajustable */
   width: 100%;
   margin: 1rem auto;
-  background: white;
+  background: #fff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Header del flyer */
 .header {
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   padding: 30px 20px;
@@ -28,24 +32,26 @@ body {
   position: relative;
 }
 
+/* Imágenes responsivas */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
+/* Logo circular */
 .logo-placeholder {
   width: 80px;
   height: 80px;
   background: rgba(255, 255, 255, 0.2);
-  border: 3px solid white;
+  border: 3px solid #fff;
   border-radius: 50%;
   margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  color: white;
+  color: #fff;
   font-weight: bold;
   overflow: hidden;
 }
@@ -57,19 +63,22 @@ img {
   border-radius: 50%;
 }
 
+/* Título principal */
 .title {
-  color: white;
+  color: #fff;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 700;
   margin: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   line-height: 1.2;
 }
 
+/* Contenido general */
 .content {
   padding: 30px 25px;
 }
 
+/* Sección de terapeutas */
 .therapists {
   text-align: center;
   margin-bottom: 25px;
@@ -79,7 +88,7 @@ img {
   color: #333;
   font-size: 20px;
   margin: 0 0 10px 0;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .therapists p {
@@ -89,6 +98,7 @@ img {
   font-weight: 500;
 }
 
+/* Secciones de información */
 .info-section {
   background: #f8f9fa;
   border-radius: 15px;
@@ -97,30 +107,12 @@ img {
   border-left: 5px solid #4facfe;
 }
 
-.dates {
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-  color: #8b4513;
-  text-align: center;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.location {
-  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-  color: #2c3e50;
-}
-
-.contact {
-  background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
-  color: #7b1fa2;
-  text-align: center;
-}
-
 .info-section h4 {
   margin: 0 0 10px 0;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .info-section p {
@@ -129,46 +121,123 @@ img {
   line-height: 1.4;
 }
 
+/* Variantes de color para subsecciones */
+.dates {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #8b4513;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.location {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  color: #2c3e50;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+}
+
+.contact {
+  background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+  color: #7b1fa2;
+  text-align: center;
+  border-radius: 10px;
+  padding: 15px 10px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para teléfono */
 .phone {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
   color: #e91e63;
   text-decoration: none;
   display: inline-block;
   margin: 10px 0;
   padding: 10px 20px;
-  background: white;
+  background: #fff;
   border-radius: 25px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.phone:hover {
+.phone:hover,
+.phone:focus {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  outline: none;
 }
 
+/* Botón WhatsApp */
 .whatsapp-btn {
   background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 15px;
-  margin: 20px 0 0 0;
+  margin: 20px auto 0; /* margen arriba, centrado horizontal */
   border-radius: 30px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+  border: none;
+  display: block;       /* importante para que el margin auto funcione */
+  max-width: 300px;     /* ancho máximo fijo */
+  width: 100%;          /* ocupa todo el ancho disponible hasta max-width */
 }
 
-.whatsapp-btn:hover {
+.whatsapp-btn:hover,
+.whatsapp-btn:focus {
   transform: translateY(-2px);
   box-shadow: 0 8px 16px rgba(37, 211, 102, 0.4);
+  outline: none;
 }
 
+/* Responsive: Celulares */
+@media (max-width: 480px) {
+  .whatsapp-btn {
+    max-width: 300px;      /* para móviles también */
+    margin: 20px auto 0;   /* centrado horizontal con margen superior */
+  }
+}
+
+.ubicacion-btn {
+  background: linear-gradient(135deg, #4285F4 0%, #357ae8 100%);
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin: 20px auto 0;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(66, 133, 244, 0.3);
+  text-decoration: none; /* para el <a> */
+}
+
+.ubicacion-btn:hover,
+.ubicacion-btn:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(66, 133, 244, 0.4);
+  outline: none;
+}
+
+
+/* Elemento decorativo */
 .decorative-element {
   position: absolute;
   width: 100px;
@@ -177,8 +246,11 @@ img {
   border-radius: 50%;
   top: -50px;
   right: -50px;
+  pointer-events: none;
+  user-select: none;
 }
 
+/* Nota de edición o advertencia */
 .edit-note {
   background: #fff3cd;
   border: 1px solid #ffeaa7;
@@ -190,6 +262,7 @@ img {
   text-align: center;
 }
 
+/* Grupo de botones */
 .btn-group {
   text-align: center;
   margin-top: 20px;
@@ -201,7 +274,7 @@ img {
 
 .btn-group button {
   background: #667eea;
-  color: white;
+  color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
@@ -218,16 +291,17 @@ img {
   background: #ff6b6b;
 }
 
-.btn-group button:hover {
+.btn-group button:hover,
+.btn-group button:focus {
   opacity: 0.9;
+  outline: none;
 }
 
+/* Caja de información destacada */
 .info-box {
   text-align: center;
-  margin-top: 15px;
   max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 15px auto 0;
   background: #e3f2fd;
   border: 1px solid #2196f3;
   border-radius: 10px;
@@ -239,73 +313,90 @@ img {
 /* Responsive: Tablets */
 @media (max-width: 768px) {
   .flyer {
-      max-width: 95%;
+    max-width: 95%;
   }
 
   .title {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   .content {
-      padding: 25px 20px;
+    padding: 25px 20px;
   }
 
   .logo-placeholder {
-      width: 70px;
-      height: 70px;
+    width: 70px;
+    height: 70px;
   }
 
   .logo-placeholder img {
-      width: 55px;
-      height: 55px;
+    width: 55px;
+    height: 55px;
   }
 
   .info-box {
-      font-size: 13px;
+    font-size: 13px;
   }
 }
 
 /* Responsive: Celulares */
 @media (max-width: 480px) {
   body {
-      padding: 10px;
+    padding: 10px;
   }
 
   .title {
-      font-size: 22px;
+    font-size: 22px;
   }
 
   .info-section h4 {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .info-section p {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .phone {
-      font-size: 16px;
-      padding: 8px 16px;
+    font-size: 16px;
+    padding: 8px 16px;
   }
 
   .btn-group button {
-      padding: 8px 16px;
-      font-size: 13px;
+    padding: 8px 16px;
+    font-size: 13px;
   }
 
   .whatsapp-btn {
-      font-size: 14px;
-      padding: 12px;
+    display: block;          /* Para que el botón sea un bloque */
+    max-width: 300px;        /* Ancho máximo que puede tener */
+    width: 100%;             /* Que ocupe todo el ancho disponible hasta 300px */
+    margin: 20px auto 0;     /* Margen superior y centrado horizontal */
+    padding: 15px;
+    background-color: #25d366;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
   }
+  
+  .whatsapp-btn:hover {
+    background-color: #128c4a;
+  }
+  
 }
 
+/* Animación */
 @keyframes slideUp {
   from {
-      opacity: 0;
-      transform: translateY(30px);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }

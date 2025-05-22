@@ -2,9 +2,70 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Biomagnetismo Medicinal - Terapeutas Montini</title>
         <link rel="stylesheet" href="volante.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            /* Estilos acordeón */
+            .accordion {
+                max-width: 700px;
+                margin: 20px auto;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                overflow: hidden;
+                font-family: Arial, sans-serif;
+            }
+            .accordion-item {
+                border-bottom: 1px solid #ccc;
+            }
+            .accordion-header {
+                background: #00796b;
+                color: white;
+                cursor: pointer;
+                padding: 15px 20px;
+                font-size: 1.1rem;
+                user-select: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .accordion-header:hover {
+                background: #004d40;
+            }
+            .accordion-header::after {
+                content: "▼";
+                font-size: 0.8rem;
+                transition: transform 0.3s ease;
+            }
+            .accordion-header.active::after {
+                transform: rotate(180deg);
+            }
+            .accordion-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.35s ease;
+                background: #f9f9f9;
+                padding: 0 20px;
+                color: #222;
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            .accordion-content p,
+            .accordion-content ol {
+                margin: 15px 0;
+            }
+            .accordion-content ol {
+                padding-left: 20px;
+            }
+            .accordion-content li {
+                margin-bottom: 10px;
+            }
+        </style>
     </head>
     <body>
         <div class="flyer">
@@ -25,13 +86,136 @@
                     <p>Analía y Gerardo Montini</p>
                 </div>
 
+                <div class="accordion" id="infoAccordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            ¿Qué es el Biomagnetismo Médico?
+                        </div>
+                        <div class="accordion-content">
+                            <p>
+                                El biomagnetismo médico es un sistema
+                                terapéutico en el que se utilizan imanes para
+                                combatir parásitos, bacterias, hongos, virus y
+                                otros gérmenes que son la causa de diversas
+                                enfermedades.
+                            </p>
+                            <p>
+                                Los imanes se aplican en diversas zonas del
+                                cuerpo, como si se tratara de un rastreo o
+                                escaneo. Una vez reconocidos los órganos y
+                                tejidos que sufren una distorsión, el terapeuta
+                                aplica un conjunto de imanes en esos puntos
+                                durante 10 a 15 minutos a cada persona.
+                            </p>
+                            <p>
+                                El biomagnetismo médico corrige la alteración
+                                iónica y recupera el equilibrio perdido del
+                                cuerpo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            Beneficios Destacados
+                        </div>
+                        <div class="accordion-content">
+                            <ol>
+                                <li>
+                                    Es compatible con cualquier otra forma de
+                                    terapia alternativa y también puede
+                                    utilizarse simultáneamente con tratamientos
+                                    alopáticos tradicionales.
+                                </li>
+                                <li>
+                                    Este sistema pretende detectar las
+                                    distorsiones del pH del organismo para saber
+                                    las patologías. El pH del organismo está
+                                    diseñado para gravitar en un sistema casi
+                                    neutro y los campos magnéticos de mediana
+                                    intensidad permiten detectar dónde se está
+                                    distorsionando el pH.
+                                </li>
+                                <li>
+                                    Teóricamente el biomagnetismo ejerce un
+                                    efecto de corrección sobre todas las
+                                    distorsiones energéticas que se alberguen en
+                                    un organismo enfermo, cualquiera que sea su
+                                    origen.
+                                </li>
+                                <li>
+                                    En la práctica, esta terapia demuestra que
+                                    aplicando imanes de determinada fuerza y
+                                    polaridad en puntos específicos del cuerpo,
+                                    se consigue exterminar en tiempo breve,
+                                    virus, bacterias, hongos o parásitos, que
+                                    son causa de la mayoría de las enfermedades
+                                    graves del hombre.
+                                </li>
+                                <li>
+                                    Ante el hecho de que ningún enfermo es igual
+                                    a otro, el éxito de la terapia biomagnética
+                                    depende de diferentes factores, tales como:
+                                    la edad, estado nutricional, carga tóxica,
+                                    tiempo de evolución de la enfermedad,
+                                    remedios recibidos previamente, lesiones que
+                                    ya están instauradas en su cuerpo, entre
+                                    otras.
+                                </li>
+                                <li>
+                                    Como energetizante, este tipo de terapia
+                                    descubrió que el polo positivo (+) activa,
+                                    impulsa y fortalece los procesos biológicos
+                                    del organismo, es dinamizador, vitalizante y
+                                    proporciona energía. Por lo tanto, está
+                                    especialmente indicado en casos de
+                                    debilidades y desgarros musculares,
+                                    fracturas de huesos y ligamentos, esguinces,
+                                    rehabilitación, cicatrización de heridas,
+                                    entre otros.
+                                </li>
+                                <li>
+                                    El polo negativo (-) del imán es analgésico,
+                                    antinflamatorio, relajante y detiene los
+                                    procesos nocivos para el organismo y, está
+                                    principalmente indicado para calmar o
+                                    suprimir el dolor.
+                                </li>
+                                <li>
+                                    Desde la primera o segunda sesión el enfermo
+                                    ya comienza a notar cambios positivos en su
+                                    salud. En promedio para casos crónicos
+                                    pueden requerirse 4 o 5 tratamientos, pero
+                                    el número real lo determinará el mismo
+                                    paciente y sus patologías.
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            Importancia y Aplicaciones
+                        </div>
+                        <div class="accordion-content">
+                            <p>
+                                Los beneficios de este tipo de terapias son cada
+                                vez menos discutidos y poco a poco se han ido
+                                complementando con tratamientos tradicionales
+                                para combatir enfermedades tan complicadas como
+                                el cáncer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="info-section dates" id="dateSection">
                     <h4>📅 Próximas Fechas</h4>
                     <p id="dateText">16, 17 y 18 de Junio</p>
                 </div>
 
                 <div class="info-section location">
-                    <h4>📍 Ubicación</h4>
+                    <button class="ubicacion-btn" onclick="abrirMapa()">
+                        📍 Ubicación
+                    </button>
                     <p>Joaquín V. González 386<br />La Rioja</p>
                 </div>
 
@@ -71,6 +255,31 @@
         </div>
 
         <script>
+            // Acordeón básico
+            document.querySelectorAll(".accordion-header").forEach((header) => {
+                header.addEventListener("click", () => {
+                    const activeHeader = document.querySelector(
+                        ".accordion-header.active"
+                    );
+                    if (activeHeader && activeHeader !== header) {
+                        activeHeader.classList.remove("active");
+                        activeHeader.nextElementSibling.style.maxHeight = null;
+                    }
+                    header.classList.toggle("active");
+                    const content = header.nextElementSibling;
+                    if (header.classList.contains("active")) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    } else {
+                        content.style.maxHeight = null;
+                    }
+                });
+            });
+
+            function abrirMapa() {
+                const url = "https://maps.app.goo.gl/M6kWR3Yv2jCjZAL99";
+                window.open(url, "_blank");
+            }
+
             function editDates() {
                 const dateText = document.getElementById("dateText");
                 const newDates = prompt(
