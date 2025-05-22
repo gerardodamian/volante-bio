@@ -82,32 +82,10 @@
                 }
             }
 
+            // Ahora esta función abre el chat directo con tu número de WhatsApp
             function shareOnWhatsApp() {
-                const dateText =
-                    document.getElementById("dateText").textContent;
-                const currentUrl = window.location.href;
-                const shortLink = generateShortLink(currentUrl);
-
-                const message = `🧲 *BIOMAGNETISMO MEDICINAL* 🧲
-
-👨‍⚕️👩‍⚕️ *Terapeutas: Analía y Gerardo Montini*
-
-📅 *Próximas fechas:* ${dateText}
-📍 *Ubicación:* Joaquín V. González 386, La Rioja
-
-📞 *Turnos:* 3827-400933
-
-✨ *Ver volante completo con diseño:*
-${shortLink}
-
-¡Reservá tu sesión de Biomagnetismo Medicinal!
-Terapia natural para el bienestar integral.
-
-#BiomagnetismoMedicinal #TerapiaNatural #LaRioja`;
-
-                const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(
-                    message
-                )}`;
+                const phoneNumber = "5493827400933"; // Código país + número
+                const whatsappUrl = `https://wa.me/${phoneNumber}`;
                 window.open(whatsappUrl, "_blank");
             }
 
