@@ -11,67 +11,17 @@
         />
 
         <style>
-            /* Estilos acordeón */
-            .accordion {
-                max-width: 700px;
-                margin: 20px auto;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                overflow: hidden;
-                font-family: Arial, sans-serif;
-            }
-            .accordion-item {
-                border-bottom: 1px solid #ccc;
-            }
-            .accordion-header {
-                background: #00796b;
-                color: white;
-                cursor: pointer;
-                padding: 15px 20px;
-                font-size: 1.1rem;
-                user-select: none;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .accordion-header:hover {
-                background: #004d40;
-            }
-            .accordion-header::after {
-                content: "▼";
-                font-size: 0.8rem;
-                transition: transform 0.3s ease;
-            }
-            .accordion-header.active::after {
-                transform: rotate(180deg);
-            }
-            .accordion-content {
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.35s ease;
-                background: #f9f9f9;
-                padding: 0 20px;
-                color: #222;
-                font-size: 0.95rem;
-                line-height: 1.5;
-            }
-            .accordion-content p,
-            .accordion-content ol {
-                margin: 15px 0;
-            }
-            .accordion-content ol {
-                padding-left: 20px;
-            }
-            .accordion-content li {
-                margin-bottom: 10px;
-            }
+
         </style>
     </head>
     <body>
+        <!-- Área secreta para activar modo edición (clic en esquina superior derecha) -->
+        <div class="secret-area" onclick="toggleEditMode()" title="Área secreta para editar"></div>
+
         <div class="flyer">
             <div class="header">
                 <div class="decorative-element"></div>
-                <div class="logo-placeholder">
+                <div class="logo-placeholder logo-tap-area" onclick="logoTapActivation()">
                     <img
                         src="images/5bb3af021b95fa1598792207.jpg"
                         alt="Biomagnetismo Logo"
@@ -230,16 +180,16 @@
                     📱 Sacar Turno por WhatsApp
                 </div>
 
-                <div class="edit-note">
-                    <strong>💡 Nota:</strong> Para cambiar las fechas cada mes,
-                    simplemente modifica el texto en la sección "Próximas
-                    Fechas".
+                <!-- Nota de edición solo visible en modo admin -->
+                <div class="edit-note" id="editNote" style="display: none;">
+                    <strong>💡 Modo Administrador Activado:</strong> Puedes editar las fechas haciendo clic en el botón de abajo.
                 </div>
             </div>
         </div>
 
         <div class="btn-group">
-            <button onclick="editDates()">✏️ Editar Fechas</button>
+            <!-- Botón de editar solo visible en modo admin -->
+            <button id="editBtn" class="edit-btn" onclick="editDates()">✏️ Editar Fechas</button>
             <button onclick="shareInWhatsApp()">
                 📤 Compartir por WhatsApp
             </button>
@@ -255,6 +205,75 @@
         </div>
 
         <script>
+            let isEditMode = false;
+            let clickCount = 0;
+            let logoTapCount = 0;
+
+            // Función para alternar el modo de edición (área secreta - esquina)
+            function toggleEditMode() {
+                clickCount++;
+                
+                if (clickCount === 5) { // Requiere 5 clics seguidos
+                    activateAdminMode();
+                    clickCount = 0;
+                } else {
+                    // Reset del contador si pasan más de 2 segundos
+                    setTimeout(() => { clickCount = 0; }, 2000);
+                }
+            }
+
+            // Función alternativa para móviles (tap en el logo)
+            function logoTapActivation() {
+                logoTapCount++;
+                
+                if (logoTapCount === 7) { // Requiere 7 taps rápidos en el logo
+                    activateAdminMode();
+                    logoTapCount = 0;
+                } else {
+                    // Reset del contador si pasan más de 3 segundos
+                    setTimeout(() => { logoTapCount = 0; }, 3000);
+                }
+            }
+
+            // Función para activar/desactivar modo admin
+            function activateAdminMode() {
+                isEditMode = !isEditMode;
+                const editBtn = document.getElementById('editBtn');
+                const editNote = document.getElementById('editNote');
+                
+                if (isEditMode) {
+                    editBtn.style.display = 'inline-block';
+                    editNote.style.display = 'block';
+                    // Vibración en móviles si está disponible
+                    if (navigator.vibrate) {
+                        navigator.vibrate([100, 50, 100]);
+                    }
+                    alert('🔓 Modo administrador activado');
+                } else {
+                    editBtn.style.display = 'none';
+                    editNote.style.display = 'none';
+                    if (navigator.vibrate) {
+                        navigator.vibrate(50);
+                    }
+                    alert('🔒 Modo administrador desactivado');
+                }
+            }
+
+            // Combinación de teclas para computadoras (Ctrl + Shift + E)
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.shiftKey && e.key === 'E') {
+                    e.preventDefault();
+                    activateAdminMode();
+                }
+            });
+
+            // Detectar si es dispositivo táctil para mostrar instrucciones
+            function isTouchDevice() {
+                return (('ontouchstart' in window) ||
+                       (navigator.maxTouchPoints > 0) ||
+                       (navigator.msMaxTouchPoints > 0));
+            }
+
             // Acordeón básico
             document.querySelectorAll(".accordion-header").forEach((header) => {
                 header.addEventListener("click", () => {
@@ -289,6 +308,11 @@
             }
 
             function editDates() {
+                if (!isEditMode) {
+                    alert('❌ No tienes permisos para editar');
+                    return;
+                }
+                
                 const dateText = document.getElementById("dateText");
                 const newDates = prompt(
                     "Ingresa las nuevas fechas:",
@@ -296,12 +320,12 @@
                 );
                 if (newDates && newDates.trim() !== "") {
                     dateText.textContent = newDates;
+                    alert('✅ Fechas actualizadas correctamente');
                 }
             }
 
-            // Ahora esta función abre el chat directo con tu número de WhatsApp
             function shareOnWhatsApp() {
-                const phoneNumber = "5493827400933"; // Código país + número
+                const phoneNumber = "5493827400933";
                 const whatsappUrl = `https://wa.me/${phoneNumber}`;
                 window.open(whatsappUrl, "_blank");
             }
