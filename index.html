@@ -388,6 +388,8 @@
                 display: none;
             }
 
+
+
             /* Botón secreto para activar edición */
             .secret-area {
                 position: fixed;
@@ -514,6 +516,9 @@
                 background-color: #1ebe5d;
                 transform: scale(1.05);
             }
+            
+
+            
         </style>
     </head>
     <body>
@@ -664,44 +669,31 @@
                 </div>
 
                 <div class="info-section dates" id="dateSection">
-                    <h4>📅 Próximas Fechas</h4>
-                    <p id="dateText">16, 17 y 18 de Junio</p>
+                    <h4>📅 Agenda del Mes</h4>
+                    <div id="dateText">
+                        <p><strong>La Rioja Capital:</strong> 16, 17 y 18 de Junio</p>
+                        <p><strong>Los Sauces:</strong> Resto del mes</p>
+                    </div>
                 </div>
-
-                <div class="info-section location">
-                    <button
-                        class="ubicacion-btn"
-                        onclick="abrirMapa()"
-                        style="display: flex; align-items: center; gap: 6px"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            fill="none"
-                            stroke="#FFFFFF"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            viewBox="0 0 24 24"
-                            style="
-                                display: inline-block;
-                                vertical-align: middle;
-                            "
-                        >
-                            <path
-                                d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z"
-                            ></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        Ubicación
-                    </button>
-                    <p>Joaquín V. González 386<br />La Rioja</p>
+                  
+                
+                
+                <div class="info-section location" >
+                    <h4>📍 Consultorio en La Rioja Capital</h4>
+                    <p>Joaquín V. González 386</p>
+                    <button class="ubicacion-btn" onclick="window.open('https://maps.app.goo.gl/M6kWR3Yv2jCjZAL99')">Ver mapa</button>
                 </div>
+                
+                <div class="info-section location" >
+                    <h4>📍 Consultorio en Los Sauces</h4>
+                    <p>Ruta Nacional 40 - Los Robles</p>
+                    <button class="ubicacion-btn" onclick="window.open('https://maps.app.goo.gl/L1Gicq9vrjksyVa16')">Ver mapa</button>
+                </div>
+                
 
                 <div class="info-section">
                     <h4>🕒 Horarios</h4>
-                    <p>De 9:00 a 12:00 y de 15:00 a 21:00</p>
+                    <p>De 8:00 a 12:00 y de 15:00 a 21:00</p>
                 <div class="info-section contact" style="text-align: center">
                     <h4
                         style="
@@ -794,14 +786,13 @@
                     const datesFromUrl = urlParams.get("dates");
 
                     if (datesFromUrl && datesFromUrl.trim() !== "") {
-                        document.getElementById("dateText").textContent =
-                            datesFromUrl;
+                        document.getElementById("dateText").innerHTML = datesFromUrl;
+
                         console.log("Fechas cargadas desde URL:", datesFromUrl);
                     } else {
                         const savedDates = getCookie("biomagnetismo_dates");
                         if (savedDates && savedDates.trim() !== "") {
-                            document.getElementById("dateText").textContent =
-                                savedDates;
+                            document.getElementById("dateText").innerHTML = savedDates;
                             console.log(
                                 "Fechas cargadas desde cookie:",
                                 savedDates
@@ -960,7 +951,8 @@
                 );
 
                 if (newDates !== null && newDates.trim() !== "") {
-                    dateText.textContent = newDates;
+                    dateText.innerHTML = newDates;
+
 
                     // Guardar en cookie (opcional)
                     saveDates(newDates);
