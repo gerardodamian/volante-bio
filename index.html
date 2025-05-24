@@ -8,8 +8,6 @@
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
             rel="stylesheet"
         />
-        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-
 
         <link
             rel="stylesheet"
@@ -729,17 +727,28 @@
             // Función para cargar fechas guardadas
             function loadSavedDates() {
                 try {
-                    const savedDates = getCookie("biomagnetismo_dates");
-                    if (savedDates && savedDates.trim() !== "") {
+                    const urlParams = new URLSearchParams(
+                        window.location.search
+                    );
+                    const datesFromUrl = urlParams.get("dates");
+
+                    if (datesFromUrl && datesFromUrl.trim() !== "") {
                         document.getElementById("dateText").textContent =
-                            savedDates;
-                        console.log("Fechas cargadas:", savedDates);
+                            datesFromUrl;
+                        console.log("Fechas cargadas desde URL:", datesFromUrl);
+                    } else {
+                        const savedDates = getCookie("biomagnetismo_dates");
+                        if (savedDates && savedDates.trim() !== "") {
+                            document.getElementById("dateText").textContent =
+                                savedDates;
+                            console.log(
+                                "Fechas cargadas desde cookie:",
+                                savedDates
+                            );
+                        }
                     }
                 } catch (error) {
-                    console.log(
-                        "No hay fechas guardadas o error al cargar:",
-                        error
-                    );
+                    console.log("Error al cargar fechas:", error);
                 }
             }
 
@@ -863,10 +872,11 @@
             });
 
             function shareInWhatsApp() {
-                const mensaje = encodeURIComponent(
-                    "🌿 Descubrí los beneficios del biomagnetismo medicinal.\nReservá tu sesión en La Rioja Capital por Whatsapp al 3827-400933. Más info acá 👉 https://gerardodamian.github.io/volante-bio/"
-                );
-                const url = `https://wa.me/?text=${mensaje}`;
+                const mensaje =
+                    "🌿 Descubrí los beneficios del biomagnetismo medicinal.\nReservá tu sesión en La Rioja Capital por Whatsapp al 3827-400933. Más info acá 👉 ";
+                const urlActual = window.location.href;
+                const textoCompleto = encodeURIComponent(mensaje + urlActual);
+                const url = `https://wa.me/?text=${textoCompleto}`;
                 window.open(url, "_blank");
             }
 
@@ -891,15 +901,17 @@
                 if (newDates !== null && newDates.trim() !== "") {
                     dateText.textContent = newDates;
 
-                    if (saveDates(newDates)) {
-                        alert(
-                            "✅ Fechas actualizadas y guardadas correctamente"
-                        );
-                    } else {
-                        alert(
-                            "⚠️ Fechas actualizadas pero no se pudieron guardar permanentemente"
-                        );
-                    }
+                    // Guardar en cookie (opcional)
+                    saveDates(newDates);
+
+                    // Actualizar URL con parámetro
+                    const newUrl = new URL(window.location.href);
+                    newUrl.searchParams.set("dates", newDates);
+                    window.history.replaceState(null, "", newUrl.toString());
+
+                    alert(
+                        "✅ Fechas actualizadas y link preparado para compartir."
+                    );
                 } else if (newDates !== null) {
                     alert("❌ No se pueden guardar fechas vacías");
                 }
