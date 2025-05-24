@@ -669,17 +669,78 @@
                 </div>
 
                 <div class="info-section location">
-                    <button class="ubicacion-btn" onclick="abrirMapa()">
-                        📍 Ubicación
+                    <button
+                        class="ubicacion-btn"
+                        onclick="abrirMapa()"
+                        style="display: flex; align-items: center; gap: 6px"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="none"
+                            stroke="#FFFFFF"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            viewBox="0 0 24 24"
+                            style="
+                                display: inline-block;
+                                vertical-align: middle;
+                            "
+                        >
+                            <path
+                                d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z"
+                            ></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Ubicación
                     </button>
                     <p>Joaquín V. González 386<br />La Rioja</p>
                 </div>
 
-                <div class="info-section contact">
-                    <h4>💬 Reservá tu Turno</h4>
-                    <a href="https://wa.me/5493827400933" class="phone"
-                        >3827-400933</a
+                <div class="info-section">
+                    <h4>🕒 Horarios</h4>
+                    <p>De 9:00 a 12:00 y de 15:00 a 21:00</p>
+                <div class="info-section contact" style="text-align: center">
+                    <h4
+                        style="
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 6px;
+                            color: green;
+                            margin: 0 auto;
+                            line-height: 1;
+                            justify-content: center;
+                        "
                     >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="green"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M7 2v2H5a2 2 0 0 0-2 2v2h18V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm13 6H4v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm-5 4h2v2h-2v-2zm-4 0h2v2h-2v-2zm-4 0h2v2H7v-2z"
+                            />
+                        </svg>
+                        Reservá tu Turno
+                    </h4>
+
+                    <div style="margin-top: 4px">
+                        <a
+                            href="https://wa.me/5493827400933"
+                            class="phone"
+                            style="
+                                color: red;
+                                text-decoration: none;
+                                font-size: 1.2rem;
+                            "
+                        >
+                            3827-400933
+                        </a>
+                    </div>
                 </div>
 
                 <div class="whatsapp-btn" onclick="shareOnWhatsApp()">
