@@ -288,13 +288,13 @@
 </head>
 <body>
     <!-- Área secreta para modo admin -->
-    <div class="secret-area" onclick="toggleEditMode()"></div>
+    <!-- <div class="secret-area" onclick="toggleEditMode()"></div> -->
 
     <div class="container-fluid">
         <div class="main-container">
             <!-- Header -->
             <div class="header-section text-center py-4">
-                <div class="logo-container mx-auto mb-3 d-flex align-items-center justify-content-center" onclick="logoTapActivation()">
+                <div class="logo-container mx-auto mb-3 d-flex align-items-center justify-content-center">
                     <img src="images/5bb3af021b95fa1598792207.jpg" alt="Logo Biomagnetismo">
                 </div>
                 <h1 class="main-title display-6">BIOMAGNETISMO MEDICINAL</h1>
@@ -365,7 +365,7 @@
                     <h5 class="mb-2"><i class="fas fa-calendar me-2"></i>Agenda del Mes</h5>
                     <div id="dateText">
                         <p class="mb-1"><strong>🔴La Rioja Capital:</strong> 14, 15 y 16 de Julio</p>
-                        <p class="mb-1"><strong>🟢Belén - Ctamarca:</strong> 3 y 4 de Julio</p>
+                        <p class="mb-1"><strong>🟢Belén - Catamarca:</strong> 3 y 4 de Julio</p>
                         <p class="mb-0"><strong>🔵Los Sauces:</strong> Resto del mes</p>
                     </div>
                 </div>
@@ -436,19 +436,19 @@
                 </div>
 
                 <!-- Nota de administrador -->
-                <div class="alert edit-note d-none" id="editNote">
+                <!-- <div class="alert edit-note d-none" id="editNote">
                     <strong><i class="fas fa-lightbulb me-1"></i>Modo Administrador Activado:</strong> 
                     Puedes editar las fechas haciendo clic en el botón de abajo.
-                </div>
+                </div> -->
             </div>
         </div>
 
         <!-- Botones de acción -->
         <div class="text-center my-4">
             <div class="btn-group flex-wrap justify-content-center gap-2" role="group">
-                <button id="editBtn" class="btn btn-outline-danger d-none" onclick="editDates()">
+                <!-- <button id="editBtn" class="btn btn-outline-danger d-none" onclick="editDates()">
                     <i class="fas fa-edit me-1"></i>Editar Fechas
-                </button>
+                </button> -->
                 <button class="btn btn-outline-success" onclick="shareInWhatsApp()">
                     <i class="fas fa-share me-1"></i>Compartir por WhatsApp
                 </button>
@@ -477,118 +477,113 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        let isEditMode = false;
-        let clickCount = 0;
-        let logoTapCount = 0;
+       
 
-        // Cargar fechas al iniciar
-        document.addEventListener('DOMContentLoaded', function() {
-            loadSavedDates();
-        });
+       
 
-        function loadSavedDates() {
-            try {
-                const urlParams = new URLSearchParams(window.location.search);
-                const datesFromUrl = urlParams.get('dates');
+        // function loadSavedDates() {
+        //     try {
+        //         const urlParams = new URLSearchParams(window.location.search);
+        //         const datesFromUrl = urlParams.get('dates');
 
-                if (datesFromUrl && datesFromUrl.trim() !== '') {
-                    document.getElementById('dateText').innerHTML = datesFromUrl;
-                } else {
-                    const savedDates = getCookie('biomagnetismo_dates');
-                    if (savedDates && savedDates.trim() !== '') {
-                        document.getElementById('dateText').innerHTML = savedDates;
-                    }
-                }
-            } catch (error) {
-                console.log('Error al cargar fechas:', error);
-            }
-        }
+        //         if (datesFromUrl && datesFromUrl.trim() !== '') {
+        //             document.getElementById('dateText').innerHTML = datesFromUrl;
+        //         } else {
+        //             const savedDates = getCookie('biomagnetismo_dates');
+        //             if (savedDates && savedDates.trim() !== '') {
+        //                 document.getElementById('dateText').innerHTML = savedDates;
+        //             }
+        //         }
+        //     } catch (error) {
+        //         console.log('Error al cargar fechas:', error);
+        //     }
+        // }
 
-        function saveDates(dates) {
-            try {
-                setCookie('biomagnetismo_dates', dates, 365);
-                return true;
-            } catch (error) {
-                console.error('Error al guardar fechas:', error);
-                return false;
-            }
-        }
+        // function saveDates(dates) {
+        //     try {
+        //         setCookie('biomagnetismo_dates', dates, 365);
+        //         return true;
+        //     } catch (error) {
+        //         console.error('Error al guardar fechas:', error);
+        //         return false;
+        //     }
+        // }
 
-        function setCookie(name, value, days) {
-            const expires = new Date();
-            expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
-            document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + expires.toUTCString() + ';path=/';
-        }
+        // function setCookie(name, value, days) {
+        //     const expires = new Date();
+        //     expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+        //     document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + expires.toUTCString() + ';path=/';
+        // }
 
-        function getCookie(name) {
-            const nameEQ = name + '=';
-            const ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
-            }
-            return null;
-        }
+        // function getCookie(name) {
+        //     const nameEQ = name + '=';
+        //     const ca = document.cookie.split(';');
+        //     for (let i = 0; i < ca.length; i++) {
+        //         let c = ca[i];
+        //         while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        //         if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
+        //     }
+        //     return null;
+        // }
 
-        function toggleEditMode() {
-            clickCount++;
-            if (clickCount === 5) {
-                activateAdminMode();
-                clickCount = 0;
-            } else {
-                setTimeout(() => { clickCount = 0; }, 2000);
-            }
-        }
+        // function toggleEditMode() {
+        //     clickCount++;
+        //     if (clickCount === 5) {
+        //         activateAdminMode();
+        //         clickCount = 0;
+        //     } else {
+        //         setTimeout(() => { clickCount = 0; }, 2000);
+        //     }
+        // }
 
-        function logoTapActivation() {
-            logoTapCount++;
-            if (logoTapCount === 7) {
-                activateAdminMode();
-                logoTapCount = 0;
-            } else {
-                setTimeout(() => { logoTapCount = 0; }, 3000);
-            }
-        }
+        // function logoTapActivation() {
+        //     logoTapCount++;
+        //     if (logoTapCount === 7) {
+        //         activateAdminMode();
+        //         logoTapCount = 0;
+        //     } else {
+        //         setTimeout(() => { logoTapCount = 0; }, 3000);
+        //     }
+        // }
 
-        function activateAdminMode() {
-            isEditMode = !isEditMode;
-            const editBtn = document.getElementById('editBtn');
-            const editNote = document.getElementById('editNote');
+        // function activateAdminMode() {
+        //     isEditMode = !isEditMode;
+        //     const editBtn = document.getElementById('editBtn');
+        //     const editNote = document.getElementById('editNote');
 
-            if (isEditMode) {
-                editBtn.classList.remove('d-none');
-                editNote.classList.remove('d-none');
-                if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+        //     if (isEditMode) {
+        //         editBtn.classList.remove('d-none');
+        //         editNote.classList.remove('d-none');
+        //         if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
                 
-                // Mostrar toast de Bootstrap
-                showToast('🔓 Modo administrador activado', 'success');
-            } else {
-                editBtn.classList.add('d-none');
-                editNote.classList.add('d-none');
-                if (navigator.vibrate) navigator.vibrate(50);
-                showToast('🔒 Modo administrador desactivado', 'info');
-            }
-        }
+        //         // Mostrar toast de Bootstrap
+        //         showToast('🔓 Modo administrador activado', 'success');
+        //     } else {
+        //         editBtn.classList.add('d-none');
+        //         editNote.classList.add('d-none');
+        //         if (navigator.vibrate) navigator.vibrate(50);
+        //         showToast('🔒 Modo administrador desactivado', 'info');
+        //     }
+        // }
 
-        function showToast(message, type) {
-            // Crear toast dinámicamente
-            const toastHtml = `
-                <div class="toast align-items-center text-bg-${type} border-0" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 1055;">
-                    <div class="d-flex">
-                        <div class="toast-body">${message}</div>
-                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', toastHtml);
-            const toastElement = document.querySelector('.toast:last-child');
-            const toast = new bootstrap.Toast(toastElement);
-            toast.show();
+        // function showToast(message, type) {
+        //     // Crear toast dinámicamente
+        //     const toastHtml = `
+        //         <div class="toast align-items-center text-bg-${type} border-0" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 1055;">
+        //             <div class="d-flex">
+        //                 <div class="toast-body">${message}</div>
+        //                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        //             </div>
+        //         </div>
+        //     `;
+        //     document.body.insertAdjacentHTML('beforeend', toastHtml);
+        //     const toastElement = document.querySelector('.toast:last-child');
+        //     const toast = new bootstrap.Toast(toastElement);
+        //     toast.show();
             
-            // Remover el toast después de que se oculte
-            toastElement.addEventListener('hidden.bs.toast', () => toastElement.remove());
-        }
+        //     // Remover el toast después de que se oculte
+        //     toastElement.addEventListener('hidden.bs.toast', () => toastElement.remove());
+        // }
 
         // Combinación de teclas Ctrl + Shift + E
         document.addEventListener('keydown', function(e) {
@@ -605,29 +600,29 @@
             window.open(`https://wa.me/?text=${textoCompleto}`, '_blank');
         }
 
-        function editDates() {
-            if (!isEditMode) {
-                showToast('❌ No tienes permisos para editar', 'danger');
-                return;
-            }
+        // function editDates() {
+        //     if (!isEditMode) {
+        //         showToast('❌ No tienes permisos para editar', 'danger');
+        //         return;
+        //     }
 
-            const dateText = document.getElementById('dateText');
-            const currentDates = dateText.textContent;
-            const newDates = prompt('Ingresa las nuevas fechas:', currentDates);
+        //     const dateText = document.getElementById('dateText');
+        //     const currentDates = dateText.textContent;
+        //     const newDates = prompt('Ingresa las nuevas fechas:', currentDates);
 
-            if (newDates !== null && newDates.trim() !== '') {
-                dateText.innerHTML = newDates;
-                saveDates(newDates);
+        //     if (newDates !== null && newDates.trim() !== '') {
+        //         dateText.innerHTML = newDates;
+        //         saveDates(newDates);
 
-                const newUrl = new URL(window.location.href);
-                newUrl.searchParams.set('dates', newDates);
-                window.history.replaceState(null, '', newUrl.toString());
+        //         const newUrl = new URL(window.location.href);
+        //         newUrl.searchParams.set('dates', newDates);
+        //         window.history.replaceState(null, '', newUrl.toString());
 
-                showToast('✅ Fechas actualizadas y link preparado para compartir', 'success');
-            } else if (newDates !== null) {
-                showToast('❌ No se pueden guardar fechas vacías', 'warning');
-            }
-        }
+        //         showToast('✅ Fechas actualizadas y link preparado para compartir', 'success');
+        //     } else if (newDates !== null) {
+        //         showToast('❌ No se pueden guardar fechas vacías', 'warning');
+        //     }
+        // }
 
         function shareOnWhatsApp() {
             const phone = '5493827400933';
