@@ -327,6 +327,45 @@
                 height: 100px;
             }
         }
+
+        .botones-extra {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .btn-descuento, .btn-patologias {
+    padding: 0.75rem 1.2rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(139, 21, 56, 0.2);
+  }
+
+  .btn-descuento {
+    background: var(--gradient-secondary);
+    color: white;
+    border: none;
+  }
+
+  .btn-descuento:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(220, 53, 69, 0.4);
+  }
+
+  .btn-patologias {
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+  }
+
+  .btn-patologias:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(139, 21, 56, 0.3);
+  }
     </style>
 </head>
 <body>
@@ -422,6 +461,99 @@
                         </div>
                     </div>
                 </div>
+
+               <!-- Botones de descuento y patologías -->
+<div class="text-center mb-4 botones-extra">
+  <button class="btn btn-descuento me-2" onclick="solicitarDescuento()">
+    💰 Descuento del 20% en la segunda sesión en San Blas de los Sauces
+  </button>
+  <div class="text-center mb-4">
+  <button class="btn btn-descuento me-2" data-bs-toggle="modal" data-bs-target="#promoSanBlasModal">
+    💰 Promoción por cuatro pacientes en San Blas de los Sauces
+  </button>
+</div>
+  <button class="btn btn-patologias" data-bs-toggle="modal" data-bs-target="#patologiasModal">
+    🩺 Ver patologías tratables
+  </button>
+</div>
+
+<!-- Modal Patologías -->
+<div class="modal fade" id="patologiasModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="background: var(--gradient-primary); color: white;">
+        <h5 class="modal-title"><i class="fas fa-heartbeat me-2"></i>Patologías tratables</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formPatologias">
+          <p class="mb-2 text-center fw-semibold" style="color: var(--primary-color);">
+            Seleccioná tus síntomas o patologías:
+          </p>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="estres"> Estrés</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="depresion"> Depresión</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="insomnio"> Insomnio</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="asma"> Asma</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="alergias"> Alergias</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="sinusitis"> Sinusitis</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="digestivo"> Problemas digestivos</div>
+            </div>
+            <div class="col-6">
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="colon"> Colon irritable</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="artrosis"> Artrosis</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="diabetes"> Diabetes</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="varices"> Várices</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="renales"> Problemas renales</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="infecciones"> Infecciones</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="marcapasos"> Marcapasos</div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="embarazo"> Embarazo</div>
+            </div>
+          </div>
+
+          <div class="text-center mt-3">
+            <button type="button" class="btn btn-success px-4" onclick="evaluarPatologias()">
+              Ver resultados
+            </button>
+          </div>
+
+          <div id="resultadoPatologias" class="alert mt-3 text-center d-none"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Promoción San Blas -->
+<div class="modal fade" id="promoSanBlasModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="background: var(--gradient-secondary); color: white;">
+        <h5 class="modal-title"><i class="fas fa-user-friends me-2"></i>Promoción especial en San Blas de los Sauces</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p style="color: var(--primary-color); font-weight: 500;">
+          🌿 Todos los <strong>sábados</strong> en los consultorios de <strong>San Blas de los Sauces</strong>, ofrecemos una promoción exclusiva:
+        </p>
+        <p class="mb-3">
+          Si se atienden <strong>cuatro pacientes</strong> el mismo día y horario, cada uno abonará solo  
+          <strong>$15.000</strong>.
+        </p>
+        <p class="small text-muted">
+          Esta promoción es válida únicamente para turnos coordinados en grupo, en la misma franja horaria del sábado.
+        </p>
+        <div class="mt-4">
+          <button class="btn whatsapp-btn px-4 py-2" onclick="contactarPromoSanBlas()">
+            <i class="fab fa-whatsapp me-2"></i>Quiero aprovechar la promoción
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
                 <!-- Agenda -->
                 <div class="schedule-card text-center p-3 mb-3" id="dateSection">
@@ -597,6 +729,43 @@
             }
         }
 
+          // Evaluar patologías
+  function evaluarPatologias() {
+    const seleccionadas = Array.from(document.querySelectorAll('#formPatologias input:checked')).map(c => c.value);
+    const resultadoDiv = document.getElementById('resultadoPatologias');
+
+    if (seleccionadas.includes('marcapasos') || seleccionadas.includes('embarazo')) {
+      resultadoDiv.className = 'alert alert-danger mt-3 text-center';
+      resultadoDiv.innerHTML = '🚫 No se recomienda realizar la terapia si estás embarazada o tenés marcapasos.';
+      resultadoDiv.classList.remove('d-none');
+      return;
+    }
+
+    const cantidad = seleccionadas.length;
+    if (cantidad === 0) {
+      resultadoDiv.className = 'alert alert-warning mt-3 text-center';
+      resultadoDiv.innerHTML = '⚠️ Por favor, seleccioná al menos una patología.';
+      resultadoDiv.classList.remove('d-none');
+      return;
+    }
+
+    let sesiones = 1;
+    if (cantidad <= 2) sesiones = 2;
+    else if (cantidad <= 4) sesiones = 3;
+    else sesiones = 5;
+
+    resultadoDiv.className = 'alert alert-success mt-3 text-center';
+    resultadoDiv.innerHTML = `✅ Podés realizar la terapia de biomagnetismo.<br>🔹 Se recomiendan aproximadamente <strong>${sesiones}</strong> sesiones.`;
+    resultadoDiv.classList.remove('d-none');
+  }
+
+  // WhatsApp directo para descuento
+  function solicitarDescuento() {
+    const phone = '5493827400933';
+    const message = encodeURIComponent('¡Hola! Quisiera aprovechar el descuento del 20% en mi segunda sesión de biomagnetismo.');
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  }
+
         function toggleQRModal() {
             const modal = new bootstrap.Modal(document.getElementById('qrModal'));
             modal.show();
@@ -608,6 +777,12 @@
             const textoCompleto = encodeURIComponent(mensaje + urlActual);
             window.open(`https://wa.me/?text=${textoCompleto}`, '_blank');
         }
+
+         function contactarPromoSanBlas() {
+    const phone = '5493827400933';
+    const message = encodeURIComponent('¡Hola! Quisiera aprovechar la promoción de San Blas de los Sauces para cuatro pacientes el sábado.');
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  }
 
         function shareOnWhatsApp() {
             const phone = '5493827400933';
