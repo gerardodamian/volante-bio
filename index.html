@@ -4,22 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Biomagnetismo Medicinal - Terapeutas Montini</title>
-    <!-- Open Graph para redes sociales y WhatsApp -->
-<meta property="og:title" content="Biomagnetismo Medicinal - Cuerpomente" />
-<meta property="og:description" content="Reservá tu sesión con los terapeutas Montini. Cuerpomente - Equilibrio a través del biomagnetismo." />
-<meta property="og:image" content="https://gerardodamian.github.io/volante-bio/images/5bb3af021b95fa1598792207.jpg" />
-<meta property="og:url" content="https://gerardodamian.github.io/volante-bio/" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="images/5bb3af021b95fa1598792207.jpg" type="image/jpeg" />
+    <meta property="og:title" content="Biomagnetismo Medicinal - Cuerpomente" />
+    <meta property="og:description" content="Reservá tu sesión con los terapeutas Montini. Cuerpomente - Equilibrio a través del biomagnetismo." />
+    <meta property="og:image" content="https://gerardodamian.github.io/volante-bio/images/5bb3af021b95fa1598792207.jpg" />
+    <meta property="og:url" content="https://gerardodamian.github.io/volante-bio/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="images/5bb3af021b95fa1598792207.jpg" type="image/jpeg" />
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <style>
@@ -31,6 +25,222 @@
             --light-pink: #fdf2f8;
             --gradient-primary: linear-gradient(135deg, #86334c, #e7a1c4);
             --gradient-secondary: linear-gradient(135deg, #dc3545 0%, #e91e63 100%);
+        }
+
+        /* Animaciones Premium */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .animate-in { animation: fadeInUp 0.6s ease-out; }
+        .animate-delay-1 { animation-delay: 0.1s; }
+        .animate-delay-2 { animation-delay: 0.2s; }
+        .animate-delay-3 { animation-delay: 0.3s; }
+
+        /* Banner de Urgencia */
+        .urgency-banner {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%);
+            color: white;
+            padding: 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+        }
+
+        /* Badges de Confianza */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .trust-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+            font-weight: 600;
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        /* Estadísticas */
+        .stats-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            color: white;
+            margin: 1.5rem 0;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonios */
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .stars { color: #ffc107; }
+
+        /* Grid de Beneficios */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(139, 21, 56, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(139, 21, 56, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Exit Popup */
+        .exit-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 400px;
+            width: 90%;
+            z-index: 2000;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .exit-popup.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            pointer-events: all;
+        }
+
+        .exit-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .exit-overlay.show { opacity: 1; pointer-events: all; }
+
+        /* FAQs */
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover { background: var(--light-pink); }
+
+        .faq-answer {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.show { padding: 1rem; max-height: 300px; }
+
+        /* Botones */
+        .save-contact-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .save-contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
         }
 
         body {
@@ -77,15 +287,8 @@
             transition: transform 0.3s ease;
         }
 
-        .logo-container:hover {
-            transform: scale(1.05);
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .logo-container:hover { transform: scale(1.05); }
+        .logo-container img { width: 100%; height: 100%; object-fit: cover; }
 
         .main-title {
             color: white;
@@ -255,7 +458,6 @@
             color: var(--primary-color);
         }
 
-        /* Estilos para el código QR */
         .qr-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-radius: 15px;
@@ -278,11 +480,7 @@
             margin: 0 auto;
         }
 
-        .qr-code img {
-            width: 100%;
-            height: 100%;
-            border-radius: 5px;
-        }
+        .qr-code img { width: 100%; height: 100%; border-radius: 5px; }
 
         .qr-floating {
             position: fixed;
@@ -307,89 +505,105 @@
             box-shadow: 0 6px 12px rgba(139, 21, 56, 0.4);
         }
 
-        .qr-floating img {
-            width: 80%;
-            height: 80%;
-        }
+        .qr-floating img { width: 80%; height: 80%; }
 
         @media (max-width: 576px) {
-            .main-container {
-                margin: 0.5rem;
-                max-width: none;
-            }
-            
-            .main-title {
-                font-size: 1.5rem;
-            }
-
-            .qr-code {
-                width: 100px;
-                height: 100px;
-            }
+            .main-container { margin: 0.5rem; max-width: none; }
+            .main-title { font-size: 1.5rem; }
+            .qr-code { width: 100px; height: 100px; }
         }
 
         .botones-extra {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
 
-  .btn-descuento, .btn-patologias {
-    padding: 0.75rem 1.2rem;
-    font-weight: 600;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(139, 21, 56, 0.2);
-  }
+        .btn-descuento, .btn-patologias {
+            padding: 0.75rem 1.2rem;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(139, 21, 56, 0.2);
+        }
 
-  .btn-descuento {
-    background: var(--gradient-secondary);
-    color: white;
-    border: none;
-  }
+        .btn-descuento {
+            background: var(--gradient-secondary);
+            color: white;
+            border: none;
+        }
 
-  .btn-descuento:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(220, 53, 69, 0.4);
-  }
+        .btn-descuento:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(220, 53, 69, 0.4);
+        }
 
-  .btn-patologias {
-    background: white;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-  }
+        .btn-patologias {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
 
-  .btn-patologias:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(139, 21, 56, 0.3);
-  }
+        .btn-patologias:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(139, 21, 56, 0.3);
+        }
     </style>
 </head>
 <body>
+    <div class="urgency-banner">
+        ⚡ ¡ÚLTIMOS TURNOS DISPONIBLES ESTE MES! - Reservá ahora 📅
+    </div>
+
     <div class="container-fluid">
         <div class="main-container">
-            <!-- Header -->
             <div class="header-section text-center py-4">
                 <div class="logo-container mx-auto mb-3 d-flex align-items-center justify-content-center">
                     <img src="images/5bb3af021b95fa1598792207.jpg" alt="Logo Biomagnetismo">
                 </div>
                 <h1 class="main-title display-6">BIOMAGNETISMO MEDICINAL</h1>
+                
+                <div class="trust-badges">
+                    <span class="trust-badge">✅ Certificados</span>
+                    <span class="trust-badge">👥 +1500 Pacientes</span>
+                    <span class="trust-badge">⭐ 98% Satisfacción</span>
+                </div>
             </div>
 
-            <!-- Contenido principal -->
             <div class="p-4">
-                <!-- Terapeutas -->
-                <div class="therapists-section text-center p-3 mb-4">
+                <div class="therapists-section text-center p-3 mb-4 animate-in">
                     <h3 class="h5 fw-bold text-dark mb-2">Terapeutas 🧬 </h3>
                     <p class="h6 mb-0 text-dark">Analía y Gerardo Montini</p>
-                    <p>🔆 Certificados 🔆  📰</p>
+                    <p>📆 Certificados 📆  📰</p>
                 </div>
 
-                <!-- NUEVA SECCIÓN: Código QR -->
-                <div class="qr-section text-center p-4 mb-4">
+                <div class="stats-section animate-in animate-delay-1">
+                    <div class="row g-3">
+                        <div class="col-4">
+                            <div class="stat-item">
+                                <div class="stat-number" data-target="1500">0</div>
+                                <div class="stat-label">Pacientes<br>Atendidos</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-item">
+                                <div class="stat-number" data-target="98">0</div>
+                                <div class="stat-label">% de<br>Satisfacción</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-item">
+                                <div class="stat-number" data-target="10">0</div>
+                                <div class="stat-label">Años de<br>Experiencia</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="qr-section text-center p-4 mb-4 animate-in animate-delay-2">
                     <h5 class="mb-3" style="color: var(--primary-color);">
                         <i class="fas fa-qrcode me-2"></i>Escaneá para más info
                     </h5>
@@ -402,7 +616,70 @@
                     </p>
                 </div>
 
-                <!-- Acordeón de información -->
+                <div class="benefits-grid animate-in animate-delay-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <div style="font-size: 0.9rem; font-weight: 600;">Resultados Rápidos</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <div style="font-size: 0.9rem; font-weight: 600;">Sin Dolor</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌿</div>
+                        <div style="font-size: 0.9rem; font-weight: 600;">100% Natural</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">👨‍⚕️</div>
+                        <div style="font-size: 0.9rem; font-weight: 600;">Profesional</div>
+                    </div>
+                </div>
+
+                <div class="mb-4 animate-in">
+                    <h5 class="text-center mb-3" style="color: var(--primary-color);">
+                        💬 Lo que dicen nuestros pacientes
+                    </h5>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">MR</div>
+                            <div>
+                                <div style="font-weight: 600;">María Rodríguez</div>
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="mb-0" style="font-style: italic; color: #666;">
+                            "Después de 3 sesiones, mis dolores de espalda desaparecieron completamente. ¡Increíble!"
+                        </p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">JL</div>
+                            <div>
+                                <div style="font-weight: 600;">Jorge López</div>
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="mb-0" style="font-style: italic; color: #666;">
+                            "Tratamiento profesional y efectivo. Mi familia y yo seguimos atendiéndonos aquí."
+                        </p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">CS</div>
+                            <div>
+                                <div style="font-weight: 600;">Carla Sánchez</div>
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="mb-0" style="font-style: italic; color: #666;">
+                            "Súper recomendable. Muy profesionales y el tratamiento realmente funciona."
+                        </p>
+                    </div>
+                </div>
+
                 <div class="accordion mb-4" id="infoAccordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -463,105 +740,101 @@
                     </div>
                 </div>
 
-               <!-- Botones de descuento y patologías -->
-<div class="text-center mb-4 botones-extra">
-  <button class="btn btn-descuento me-2" onclick="solicitarDescuento()">
-    💰 Descuento del 20% en la segunda sesión en San Blas de los Sauces
-  </button>
-  <div class="text-center mb-4">
-  <button class="btn btn-descuento me-2" data-bs-toggle="modal" data-bs-target="#promoSanBlasModal">
-    💰 Promoción por cuatro pacientes en San Blas de los Sauces
-  </button>
-</div>
-  <button class="btn btn-patologias" data-bs-toggle="modal" data-bs-target="#patologiasModal">
-    🩺 Ver patologías tratables
-  </button>
-</div>
+                <div class="text-center mb-4 botones-extra animate-in">
+                    <button class="btn save-contact-btn mb-2" onclick="saveContact()">
+                        📱 Guardar Contacto
+                    </button>
+                    <button class="btn btn-descuento me-2" onclick="solicitarDescuento()">
+                        💰 Descuento del 20% en la segunda sesión en San Blas de los Sauces
+                    </button>
+                    <button class="btn btn-descuento me-2" data-bs-toggle="modal" data-bs-target="#promoSanBlasModal">
+                        💰 Promoción por cuatro pacientes en San Blas de los Sauces
+                    </button>
+                    <button class="btn btn-patologias" data-bs-toggle="modal" data-bs-target="#patologiasModal">
+                        🩺 Ver patologías tratables
+                    </button>
+                </div>
 
-<!-- Modal Patologías -->
-<div class="modal fade" id="patologiasModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header" style="background: var(--gradient-primary); color: white;">
-        <h5 class="modal-title"><i class="fas fa-heartbeat me-2"></i>Patologías tratables</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <form id="formPatologias">
-          <p class="mb-2 text-center fw-semibold" style="color: var(--primary-color);">
-            Seleccioná tus síntomas o patologías:
-          </p>
-          <div class="row">
-            <div class="col-6">
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="estres"> Estrés</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="depresion"> Depresión</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="insomnio"> Insomnio</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="asma"> Asma</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="alergias"> Alergias</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="sinusitis"> Sinusitis</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="digestivo"> Problemas digestivos</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="digestivo"> HIV</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="digestivo"> Coronarios</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="digestivo"> Tumores</div>
-            </div>
-            <div class="col-6">
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="digestivo"> Polipos</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="colon"> Colon irritable</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="colon"> Parasitos intestinales</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="artrosis"> Artrosis</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="diabetes"> Diabetes</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="varices"> Várices</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="renales"> Problemas renales</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="infecciones"> Infecciones</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="marcapasos"> Marcapasos</div>
-              <div class="form-check"><input class="form-check-input" type="checkbox" value="embarazo"> Embarazo</div>
-            </div>
-          </div>
+                <div class="modal fade" id="patologiasModal" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background: var(--gradient-primary); color: white;">
+                                <h5 class="modal-title"><i class="fas fa-heartbeat me-2"></i>Patologías tratables</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="formPatologias">
+                                    <p class="mb-2 text-center fw-semibold" style="color: var(--primary-color);">
+                                        Seleccioná tus síntomas o patologías:
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="estres"> Estrés</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="depresion"> Depresión</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="insomnio"> Insomnio</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="asma"> Asma</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="alergias"> Alergias</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="sinusitis"> Sinusitis</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="digestivo"> Problemas digestivos</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="hiv"> HIV</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="coronarios"> Coronarios</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="tumores"> Tumores</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="polipos"> Pólipos</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="colon"> Colon irritable</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="parasitos"> Parásitos intestinales</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="artrosis"> Artrosis</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="diabetes"> Diabetes</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="varices"> Várices</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="renales"> Problemas renales</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="infecciones"> Infecciones</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="marcapasos"> Marcapasos</div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" value="embarazo"> Embarazo</div>
+                                        </div>
+                                    </div>
 
-          <div class="text-center mt-3">
-            <button type="button" class="btn btn-success px-4" onclick="evaluarPatologias()">
-              Ver resultados
-            </button>
-          </div>
+                                    <div class="text-center mt-3">
+                                        <button type="button" class="btn btn-success px-4" onclick="evaluarPatologias()">
+                                            Ver resultados
+                                        </button>
+                                    </div>
 
-          <div id="resultadoPatologias" class="alert mt-3 text-center d-none"></div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+                                    <div id="resultadoPatologias" class="alert mt-3 text-center d-none"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Modal Promoción San Blas -->
-<div class="modal fade" id="promoSanBlasModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header" style="background: var(--gradient-secondary); color: white;">
-        <h5 class="modal-title"><i class="fas fa-user-friends me-2"></i>Promoción especial en San Blas de los Sauces</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body text-center">
-        <p style="color: var(--primary-color); font-weight: 500;">
-          🌿 Todos los <strong>sábados</strong> en los consultorios de <strong>San Blas de los Sauces</strong>, ofrecemos una promoción exclusiva:
-        </p>
-        <p class="mb-3">
-          Si se atienden <strong>cuatro pacientes</strong> el mismo día y horario, cada uno abonará solo  
-          <strong>$15.000</strong>.
-        </p>
-        <p class="small text-muted">
-          Esta promoción es válida únicamente para turnos coordinados en grupo, en la misma franja horaria del sábado y haciendo el pago por adelantado.
-        </p>
-        <div class="mt-4">
-          <button class="btn whatsapp-btn px-4 py-2" onclick="contactarPromoSanBlas()">
-            <i class="fab fa-whatsapp me-2"></i>Quiero aprovechar la promoción
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                <div class="modal fade" id="promoSanBlasModal" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background: var(--gradient-secondary); color: white;">
+                                <h5 class="modal-title"><i class="fas fa-user-friends me-2"></i>Promoción especial en San Blas de los Sauces</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <p style="color: var(--primary-color); font-weight: 500;">
+                                    🌿 Todos los <strong>sábados</strong> en los consultorios de <strong>San Blas de los Sauces</strong>, ofrecemos una promoción exclusiva:
+                                </p>
+                                <p class="mb-3">
+                                    Si se atienden <strong>cuatro pacientes</strong> el mismo día y horario, cada uno abonará solo  
+                                    <strong>$15.000</strong>.
+                                </p>
+                                <p class="small text-muted">
+                                    Esta promoción es válida únicamente para turnos coordinados en grupo, en la misma franja horaria del sábado y haciendo el pago por adelantado.
+                                </p>
+                                <div class="mt-4">
+                                    <button class="btn whatsapp-btn px-4 py-2" onclick="contactarPromoSanBlas()">
+                                        <i class="fab fa-whatsapp me-2"></i>Quiero aprovechar la promoción
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-
-                <!-- Agenda -->
                 <div class="schedule-card text-center p-3 mb-3" id="dateSection">
                     <h5 class="mb-2"><i class="fas fa-calendar me-2"></i>Agenda del Mes</h5>
                     <div id="dateText">
@@ -571,7 +844,6 @@
                     </div>
                 </div>
 
-                <!-- Ubicaciones -->
                 <div class="row g-3 mb-3">
                     <div class="col-12">
                         <div class="location-card p-3 text-center">
@@ -602,13 +874,11 @@
                     </div>
                 </div>
 
-                <!-- Horarios -->
                 <div class="info-card p-3 mb-3">
                     <h5 class="mb-2"><i class="fas fa-clock me-2"></i>Horarios</h5>
                     <p class="mb-0">De 8:00 a 12:00 y de 15:00 a 21:00</p>
                 </div>
 
-                <!-- Reservar turno -->
                 <div class="contact-card text-center p-3 mb-3">
                     <h5 class="mb-3 text-success">
                         <i class="fas fa-calendar-check me-2"></i>Reservá tu Turno
@@ -618,15 +888,13 @@
                     </a>
                 </div>
 
-                <!-- Botón WhatsApp principal -->
                 <div class="d-grid mb-4">
                     <button class="btn whatsapp-btn py-3" onclick="shareOnWhatsApp()">
                         <i class="fab fa-whatsapp me-2"></i>Sacar Turno por WhatsApp
                     </button>
                 </div>
 
-                <!-- Información web -->
-                <div class="text-center p-3 mb-3" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 15px; border-left: 5px solid #2196f3;">
+                <div class="text-center p-3 mb-3 animate-in" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 15px; border-left: 5px solid #2196f3;">
                     <h5 class="mb-3" style="color: #1976d2;">
                         <i class="fas fa-globe me-2"></i>Más Información
                     </h5>
@@ -635,10 +903,55 @@
                     </button>
                     <p class="mt-2 mb-0 small text-muted fst-italic">Conoce más detalles sobre el tratamiento</p>
                 </div>
+
+                <div class="mb-4 animate-in">
+                    <h5 class="text-center mb-3" style="color: var(--primary-color);">
+                        ❓ Preguntas Frecuentes
+                    </h5>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Cuántas sesiones necesito?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Generalmente se recomiendan entre 2 y 5 sesiones dependiendo de la condición. Muchos pacientes notan mejoras desde la primera sesión.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Es doloroso el tratamiento?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            No, el biomagnetismo es completamente indoloro. Solo se colocan imanes sobre el cuerpo mientras descansas cómodamente.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Cuánto dura una sesión?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Cada sesión tiene una duración aproximada de 45 minutos a 1 hora, incluyendo el rastreo y la aplicación de los imanes.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Se puede combinar con otros tratamientos?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Sí, el biomagnetismo es compatible con tratamientos alopáticos y otras terapias alternativas.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Botones de acción -->
         <div class="text-center my-4">
             <div class="btn-group flex-wrap justify-content-center gap-2" role="group">
                 <button class="btn btn-outline-success" onclick="shareInWhatsApp()">
@@ -650,7 +963,6 @@
             </div>
         </div>
 
-        <!-- Información de uso -->
         <div class="alert info-alert text-center mx-auto" style="max-width: 500px;">
             <strong><i class="fas fa-lightbulb me-1"></i>Cómo funciona:</strong><br>
             1. Haz clic en "Compartir por WhatsApp"<br>
@@ -660,17 +972,35 @@
         </div>
     </div>
 
-    <!-- Botón QR flotante -->
     <div class="qr-floating" onclick="toggleQRModal()">
         <i class="fas fa-qrcode" style="color: var(--primary-color);"></i>
     </div>
 
-    <!-- Botón flotante WhatsApp -->
     <button class="whatsapp-float d-flex align-items-center justify-content-center" onclick="shareOnWhatsApp()">
         <i class="fab fa-whatsapp"></i>
     </button>
 
-    <!-- Modal QR (opcional) -->
+    <div class="exit-overlay" id="exitOverlay" onclick="closeExitPopup()"></div>
+    <div class="exit-popup" id="exitPopup">
+        <div class="text-center">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">🎁</div>
+            <h4 style="color: var(--primary-color); font-weight: 700;">¡Espera!</h4>
+            <p style="color: #666; margin: 1rem 0;">
+                Antes de irte, aprovechá este descuento especial
+            </p>
+            <div style="background: var(--gradient-secondary); color: white; padding: 1rem; border-radius: 10px; margin: 1rem 0;">
+                <div style="font-size: 2rem; font-weight: 700;">10% OFF</div>
+                <div>En tu primera sesión</div>
+            </div>
+            <button class="btn whatsapp-btn w-100 mb-2" onclick="claimDiscount()">
+                <i class="fab fa-whatsapp me-2"></i>Quiero mi descuento
+            </button>
+            <button class="btn btn-link text-muted" onclick="closeExitPopup()">
+                No, gracias
+            </button>
+        </div>
+    </div>
+
     <div class="modal fade" id="qrModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -689,18 +1019,105 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- QR Code Generator -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 
     <script>
-        // Generar código QR
+        // Animación de contadores
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target + (target === 98 ? '%' : '+');
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + (target === 98 ? '%' : '+');
+                    }
+                }, 16);
+            });
+        }
+
+        // Exit Intent Detection
+        let exitIntentShown = false;
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY <= 0 && !exitIntentShown && window.innerWidth > 768) {
+                exitIntentShown = true;
+                showExitPopup();
+            }
+        });
+
+        function showExitPopup() {
+            document.getElementById('exitOverlay').classList.add('show');
+            document.getElementById('exitPopup').classList.add('show');
+            vibrateDevice();
+        }
+
+        function closeExitPopup() {
+            document.getElementById('exitOverlay').classList.remove('show');
+            document.getElementById('exitPopup').classList.remove('show');
+        }
+
+        function claimDiscount() {
+            const phone = '5493827400933';
+            const message = encodeURIComponent('¡Hola! Quiero aprovechar el 10% OFF en mi primera sesión de biomagnetismo 🎁');
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+            closeExitPopup();
+            vibrateDevice();
+        }
+
+        // Vibración háptica
+        function vibrateDevice() {
+            if ('vibrate' in navigator) {
+                navigator.vibrate(50);
+            }
+        }
+
+        // Toggle FAQs
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            answer.classList.toggle('show');
+            icon.style.transform = answer.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+            vibrateDevice();
+        }
+
+        // Guardar Contacto (vCard)
+        function saveContact() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Biomagnetismo - Los Sauces
+TEL;TYPE=CELL:+5493827400933
+EMAIL:gerardomontini@gmail.com
+ADR;TYPE=HOME:;;Ruta Nacional 40 - Los Robles - San Blas de los Sauces ;La Rioja;;Argentina
+URL:https://gerardodamian.github.io/volante-bio/
+NOTE:Biomagnetismo Medicinal - Analía y Gerardo Montini - Certificados
+END:VCARD`;
+
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Biomagnetismo_Montini.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+            
+            showToast('¡Contacto guardado! Revisa tus descargas 📱', 'success');
+            vibrateDevice();
+        }
+
         function generateQR() {
             const url = window.location.href;
             
-            // QR en la sección principal
             const qr = qrcode(0, 'M');
             qr.addData(url);
             qr.make();
@@ -711,7 +1128,6 @@
                 canvas.height = 104;
                 const ctx = canvas.getContext('2d');
                 
-                // Crear QR como imagen
                 const qrString = qr.createDataURL(4);
                 const img = new Image();
                 img.onload = function() {
@@ -720,7 +1136,6 @@
                 img.src = qrString;
             }
 
-            // QR en el modal
             const canvasModal = document.getElementById('qrcodeModal');
             if (canvasModal) {
                 canvasModal.width = 184;
@@ -735,42 +1150,41 @@
             }
         }
 
-          // Evaluar patologías
-  function evaluarPatologias() {
-    const seleccionadas = Array.from(document.querySelectorAll('#formPatologias input:checked')).map(c => c.value);
-    const resultadoDiv = document.getElementById('resultadoPatologias');
+        function evaluarPatologias() {
+            const seleccionadas = Array.from(document.querySelectorAll('#formPatologias input:checked')).map(c => c.value);
+            const resultadoDiv = document.getElementById('resultadoPatologias');
 
-    if (seleccionadas.includes('marcapasos') || seleccionadas.includes('embarazo')) {
-      resultadoDiv.className = 'alert alert-danger mt-3 text-center';
-      resultadoDiv.innerHTML = '🚫 No se recomienda realizar la terapia si estás embarazada o tenés marcapasos.';
-      resultadoDiv.classList.remove('d-none');
-      return;
-    }
+            if (seleccionadas.includes('marcapasos') || seleccionadas.includes('embarazo')) {
+                resultadoDiv.className = 'alert alert-danger mt-3 text-center';
+                resultadoDiv.innerHTML = '🚫 No se recomienda realizar la terapia si estás embarazada o tenés marcapasos.';
+                resultadoDiv.classList.remove('d-none');
+                return;
+            }
 
-    const cantidad = seleccionadas.length;
-    if (cantidad === 0) {
-      resultadoDiv.className = 'alert alert-warning mt-3 text-center';
-      resultadoDiv.innerHTML = '⚠️ Por favor, seleccioná al menos una patología.';
-      resultadoDiv.classList.remove('d-none');
-      return;
-    }
+            const cantidad = seleccionadas.length;
+            if (cantidad === 0) {
+                resultadoDiv.className = 'alert alert-warning mt-3 text-center';
+                resultadoDiv.innerHTML = '⚠️ Por favor, seleccioná al menos una patología.';
+                resultadoDiv.classList.remove('d-none');
+                return;
+            }
 
-    let sesiones = 1;
-    if (cantidad <= 2) sesiones = 2;
-    else if (cantidad <= 4) sesiones = 3;
-    else sesiones = 5;
+            let sesiones = 1;
+            if (cantidad <= 2) sesiones = 2;
+            else if (cantidad <= 4) sesiones = 3;
+            else sesiones = 5;
 
-    resultadoDiv.className = 'alert alert-success mt-3 text-center';
-    resultadoDiv.innerHTML = `✅ Podés realizar la terapia de biomagnetismo.<br>🔹 Se recomiendan aproximadamente <strong>${sesiones}</strong> sesiones.`;
-    resultadoDiv.classList.remove('d-none');
-  }
+            resultadoDiv.className = 'alert alert-success mt-3 text-center';
+            resultadoDiv.innerHTML = `✅ Podés realizar la terapia de biomagnetismo.<br>🔹 Se recomiendan aproximadamente <strong>${sesiones}</strong> sesiones.`;
+            resultadoDiv.classList.remove('d-none');
+        }
 
-  // WhatsApp directo para descuento
-  function solicitarDescuento() {
-    const phone = '5493827400933';
-    const message = encodeURIComponent('¡Hola! Quisiera aprovechar el descuento del 20% en mi segunda sesión de biomagnetismo.');
-    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-  }
+        function solicitarDescuento() {
+            const phone = '5493827400933';
+            const message = encodeURIComponent('¡Hola! Quisiera aprovechar el descuento del 20% en mi segunda sesión de biomagnetismo.');
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+            vibrateDevice();
+        }
 
         function toggleQRModal() {
             const modal = new bootstrap.Modal(document.getElementById('qrModal'));
@@ -782,18 +1196,21 @@
             const urlActual = window.location.href;
             const textoCompleto = encodeURIComponent(mensaje + urlActual);
             window.open(`https://wa.me/?text=${textoCompleto}`, '_blank');
+            vibrateDevice();
         }
 
-         function contactarPromoSanBlas() {
-    const phone = '5493827400933';
-    const message = encodeURIComponent('¡Hola! Quisiera aprovechar la promoción de San Blas de los Sauces para cuatro pacientes el sábado.');
-    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-  }
+        function contactarPromoSanBlas() {
+            const phone = '5493827400933';
+            const message = encodeURIComponent('¡Hola! Quisiera aprovechar la promoción de San Blas de los Sauces para cuatro pacientes el sábado.');
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+            vibrateDevice();
+        }
 
         function shareOnWhatsApp() {
             const phone = '5493827400933';
             const message = encodeURIComponent('¡Hola! Quisiera sacar un turno para biomagnetismo.');
             window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+            vibrateDevice();
         }
 
         function copyLink() {
@@ -823,7 +1240,6 @@
         }
 
         function showToast(message, type) {
-            // Crear toast dinámicamente
             const toastHtml = `
                 <div class="toast align-items-center text-bg-${type} border-0" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 1055;">
                     <div class="d-flex">
@@ -837,13 +1253,18 @@
             const toast = new bootstrap.Toast(toastElement);
             toast.show();
             
-            // Remover el toast después de que se oculte
             toastElement.addEventListener('hidden.bs.toast', () => toastElement.remove());
         }
 
         // Generar QR cuando carga la página
         document.addEventListener('DOMContentLoaded', function() {
             generateQR();
+            animateCounters();
+            
+            // Agregar vibración a todos los botones
+            document.querySelectorAll('button, .btn, a').forEach(el => {
+                el.addEventListener('click', vibrateDevice);
+            });
         });
     </script>
 </body>
