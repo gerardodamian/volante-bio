@@ -745,10 +745,10 @@
                         📱 Guardar Contacto
                     </button>
                     <button class="btn btn-descuento me-2" onclick="solicitarDescuento()">
-                        💰 Descuento del 20% en la segunda sesión en San Blas de los Sauces
+                        💰 Descuento del 20% en la segunda sesión en Valle Hermoso
                     </button>
                     <button class="btn btn-descuento me-2" data-bs-toggle="modal" data-bs-target="#promoSanBlasModal">
-                        💰 Promoción por cuatro pacientes en San Blas de los Sauces
+                        💰 Promoción por cuatro pacientes en Valle Hermoso
                     </button>
                     <button class="btn btn-patologias" data-bs-toggle="modal" data-bs-target="#patologiasModal">
                         🩺 Ver patologías tratables
@@ -816,11 +816,11 @@
                             </div>
                             <div class="modal-body text-center">
                                 <p style="color: var(--primary-color); font-weight: 500;">
-                                    🌿 Todos los <strong>sábados</strong> en los consultorios de <strong>San Blas de los Sauces</strong>, ofrecemos una promoción exclusiva:
+                                    🌿 Todos los <strong>sábados</strong> en los consultorios de <strong>Valle Hermoso</strong>, ofrecemos una promoción exclusiva:
                                 </p>
                                 <p class="mb-3">
                                     Si se atienden <strong>cuatro pacientes</strong> el mismo día y horario, cada uno abonará solo  
-                                    <strong>$15.000</strong>.
+                                    <strong>$20.000</strong>.
                                 </p>
                                 <p class="small text-muted">
                                     Esta promoción es válida únicamente para turnos coordinados en grupo, en la misma franja horaria del sábado y haciendo el pago por adelantado.
@@ -838,8 +838,8 @@
                 <div class="schedule-card text-center p-3 mb-3" id="dateSection">
                     <h5 class="mb-2"><i class="fas fa-calendar me-2"></i>Agenda del Mes</h5>
                     <div id="dateText">
-                        <p class="mb-1"><strong>🔴La Rioja Capital:</strong> 11, 12 y 13 de Febrero</p>
-                        <p class="mb-1"><strong>🟢Belén - Catamarca:</strong>  5 y 6 de Enero </p>
+                        <p class="mb-1"><strong>🔴La Rioja Capital:</strong> 18, 19 y 20 de Febrero de Febrero</p>
+                        
                         <p class="mb-0"><strong>🔵Valle Hermoso, CBA:</strong> Resto del mes</p>
                     </div>
                 </div>
@@ -854,19 +854,11 @@
                             </button>
                         </div>
                     </div>
-                   <div class="col-12">
-                        <div class="location-card p-3 text-center">
-                            <h5 class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Consultorio en Belén</h5>
-                            <p class="mb-2">Urquiza 122</p>
-                            <button class="btn map-btn btn-sm" onclick="window.open('https://maps.app.goo.gl/xjShjRhDLqH3SnCTA?g_st=aw', '_blank')">
-                                <i class="fas fa-map me-1"></i>Ver mapa
-                            </button>
-                        </div>
-                    </div>
+                   
                     <div class="col-12">
                         <div class="location-card p-3 text-center">
                             <h5 class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Consultorio en Valle Hermoso</h5>
-                            <p class="mb-2">Gobernador Carcano s/n, Valle Hermoso - Córdoba</p>
+                            <p class="mb-2">Gobernador Carcano 1382, Valle Hermoso - Córdoba</p>
                             <button class="btn map-btn btn-sm" onclick="window.open('https://maps.app.goo.gl/6qS9r9ByZWdB62Mj7')">
                                 <i class="fas fa-map me-1"></i>Ver mapa
                             </button>
@@ -1096,7 +1088,7 @@ VERSION:3.0
 FN:Biomagnetismo - Los Sauces
 TEL;TYPE=CELL:+5493827400933
 EMAIL:gerardomontini@gmail.com
-ADR;TYPE=HOME:;;Ruta Nacional 40 - Los Robles - San Blas de los Sauces ;La Rioja;;Argentina
+ADR;TYPE=HOME:Gobernador Carcano 1382 - Valle Hermoso ;Cordoba;;Argentina
 URL:https://gerardodamian.github.io/volante-bio/
 NOTE:Biomagnetismo Medicinal - Analía y Gerardo Montini - Certificados
 END:VCARD`;
@@ -1192,7 +1184,7 @@ END:VCARD`;
         }
 
         function shareInWhatsApp() {
-            const mensaje = '🌿 Descubrí los beneficios del biomagnetismo medicinal.\nReservá tu sesión en La Rioja Capital por Whatsapp al 3827-400933. Más info acá 👉 ';
+            const mensaje = '🌿 Descubrí los beneficios del biomagnetismo medicinal.\nReservá tu sesión en Valle Hermoso o en  La Rioja Capital por Whatsapp al 3827-400933. Más info acá 👉 ';
             const urlActual = window.location.href;
             const textoCompleto = encodeURIComponent(mensaje + urlActual);
             window.open(`https://wa.me/?text=${textoCompleto}`, '_blank');
@@ -1201,7 +1193,7 @@ END:VCARD`;
 
         function contactarPromoSanBlas() {
             const phone = '5493827400933';
-            const message = encodeURIComponent('¡Hola! Quisiera aprovechar la promoción de San Blas de los Sauces para cuatro pacientes el sábado.');
+            const message = encodeURIComponent('¡Hola! Quisiera aprovechar la promoción de Valle Hermoso para cuatro pacientes el sábado.');
             window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
             vibrateDevice();
         }
