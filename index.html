@@ -48,6 +48,33 @@
         .animate-delay-2 { animation-delay: 0.2s; }
         .animate-delay-3 { animation-delay: 0.3s; }
 
+        /* ===== Ajustes de estadísticas en celular ===== */
+@media (max-width: 576px) {
+  .stats-section {
+    padding: 1.2rem;
+  }
+
+  .stats-section .row {
+    row-gap: 1rem;
+  }
+
+  .stats-section .col-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+}
+
+
         /* Banner de Urgencia */
         .urgency-banner {
             background: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%);
