@@ -91,7 +91,7 @@
             100% { background-position: 1000px 0; }
         }
 
-        .animate-in { 
+        .animate-in { animation:none !important; 
             animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
         }
         .animate-delay-1 { animation-delay: 0.1s; animation-fill-mode: backwards; }
@@ -134,7 +134,7 @@
             font-weight: 600;
             font-size: 0.95rem;
             letter-spacing: 0.3px;
-            animation: pulse 3s infinite ease-in-out;
+            animation: none;
             box-shadow: 0 4px 20px rgba(255, 71, 87, 0.3);
             position: relative;
             overflow: hidden;
@@ -154,7 +154,7 @@
                 transparent
             );
             transform: rotate(45deg);
-            animation: shimmer 3s infinite;
+            animation: none;
         }
 
         /* Badges de Confianza */
@@ -168,8 +168,8 @@
 
         .trust-badge {
             background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            
+            -webkit-
             padding: 0.6rem 1.2rem;
             border-radius: 25px;
             border: 1.5px solid rgba(255, 255, 255, 0.4);
@@ -391,8 +391,8 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            
+            -webkit-
             z-index: 1999;
             opacity: 0;
             pointer-events: none;
@@ -562,7 +562,7 @@
             border-radius: 50%;
             top: -150px;
             right: -150px;
-            animation: pulse 4s infinite ease-in-out;
+            animation: none;
         }
         
         .header-section::after {
@@ -865,7 +865,7 @@
             height: 100%;
             border-radius: 50%;
             background: var(--success-color);
-            animation: pulse-ring 2s infinite;
+            animation: none;
         }
         
         @keyframes pulse-ring {
@@ -958,7 +958,7 @@
             width: 200%;
             height: 200%;
             background: radial-gradient(circle, rgba(139, 21, 56, 0.05) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
+            animation: none;
         }
         
         @keyframes rotate {
@@ -1089,7 +1089,20 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 14px rgba(139, 21, 56, 0.3);
         }
-    </style>
+    
+/* MOBILE PERFORMANCE OPTIMIZATION */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  scroll-behavior: smooth;
+}
+img {
+  max-width:100%;
+  height:auto;
+}
+
+</style>
 </head>
 <body>
     <div class="urgency-banner">
