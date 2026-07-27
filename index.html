@@ -18,20 +18,22 @@
     
     <style>
         :root {
-            --primary-color: #8b1538;
-            --secondary-color: #dc3545;
-            --accent-color: #e91e63;
+            --primary-color: #1e4d3b;
+            --secondary-color: #b8823a;
+            --accent-color: #d4a24c;
             --success-color: #25d366;
-            --light-pink: #fdf2f8;
-            --gradient-primary: linear-gradient(135deg, #8b1538 0%, #c41e3a 100%);
-            --gradient-secondary: linear-gradient(135deg, #dc3545 0%, #e91e63 100%);
-            --gradient-elegant: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --light-cream: #f6f2e7;
+            --gradient-primary: linear-gradient(135deg, #1e4d3b 0%, #123527 100%);
+            --gradient-secondary: linear-gradient(135deg, #b8823a 0%, #d4a24c 100%);
+            --gradient-elegant: linear-gradient(135deg, #1e4d3b 0%, #3d7a5c 100%);
             --gradient-premium: linear-gradient(135deg, #434343 0%, #000000 100%);
             --gradient-soft: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 4px 20px rgba(139, 21, 56, 0.12);
-            --shadow-lg: 0 10px 40px rgba(139, 21, 56, 0.15);
-            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+            --shadow-sm: 0 2px 8px rgba(18, 40, 32, 0.06);
+            --shadow-md: 0 4px 20px rgba(30, 77, 59, 0.12);
+            --shadow-lg: 0 10px 40px rgba(30, 77, 59, 0.15);
+            --shadow-xl: 0 20px 60px rgba(18, 40, 32, 0.25);
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.5);
             --border-radius: 16px;
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -42,7 +44,6 @@
         
         body {
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(180deg, #ffffff 0%, #fdf2f8 100%);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -67,11 +68,11 @@
         @keyframes pulse {
             0%, 100% { 
                 transform: scale(1); 
-                box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+                box-shadow: 0 4px 15px rgba(184, 130, 58, 0.4);
             }
             50% { 
                 transform: scale(1.02); 
-                box-shadow: 0 8px 25px rgba(255, 71, 87, 0.6);
+                box-shadow: 0 8px 25px rgba(184, 130, 58, 0.6);
             }
         }
 
@@ -127,7 +128,7 @@
 
         /* Banner de Urgencia */
         .urgency-banner {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%);
+            background: linear-gradient(135deg, #d4a24c 0%, #b8823a 100%);
             color: white;
             padding: 1rem;
             text-align: center;
@@ -135,7 +136,7 @@
             font-size: 0.95rem;
             letter-spacing: 0.3px;
             animation: none;
-            box-shadow: 0 4px 20px rgba(255, 71, 87, 0.3);
+            box-shadow: 0 4px 20px rgba(184, 130, 58, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -167,9 +168,9 @@
         }
 
         .trust-badge {
-            background: rgba(255, 255, 255, 0.25);
-            
-            -webkit-
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             padding: 0.6rem 1.2rem;
             border-radius: 25px;
             border: 1.5px solid rgba(255, 255, 255, 0.4);
@@ -178,7 +179,7 @@
             letter-spacing: 0.3px;
             animation: slideInRight 0.8s ease-out;
             transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(18, 40, 32, 0.1);
         }
         
         .trust-badge:hover {
@@ -190,6 +191,9 @@
         /* Estadísticas */
         .stats-section {
             background: var(--gradient-elegant);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: var(--border-radius);
             padding: 2.5rem 2rem;
             color: white;
@@ -235,7 +239,9 @@
 
         /* Testimonios */
         .testimonial-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             border-radius: var(--border-radius);
             padding: 2rem;
             box-shadow: var(--shadow-md);
@@ -252,7 +258,7 @@
             top: -10px;
             left: 20px;
             font-size: 6rem;
-            color: var(--light-pink);
+            color: var(--light-cream);
             font-family: Georgia, serif;
             line-height: 1;
             opacity: 0.3;
@@ -283,7 +289,7 @@
             color: white;
             font-weight: 700;
             font-size: 1.3rem;
-            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+            box-shadow: 0 4px 15px rgba(184, 130, 58, 0.3);
             border: 3px solid white;
         }
         
@@ -309,7 +315,9 @@
         }
 
         .benefit-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             border-radius: var(--border-radius);
             padding: 2rem 1.5rem;
             text-align: center;
@@ -390,32 +398,27 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.75);
-            
-            -webkit-
+            background: rgba(18, 40, 32, 0.75);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
             z-index: 1999;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.4s ease;
         }
 
-        .exit-overlay.show {
-            opacity: 1;
-            pointer-events: all;
-        }
-            transition: opacity 0.3s ease;
-        }
-
         .exit-overlay.show { opacity: 1; pointer-events: all; }
 
         /* FAQs */
         .faq-item {
-            background: white;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             border-radius: var(--border-radius);
             margin-bottom: 1rem;
             overflow: hidden;
             box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(139, 21, 56, 0.1);
+            border: 1px solid rgba(30, 77, 59, 0.1);
             transition: var(--transition);
         }
         
@@ -449,7 +452,7 @@
         }
 
         .faq-question:hover { 
-            background: var(--light-pink);
+            background: var(--light-cream);
             padding-left: 1.75rem;
         }
         
@@ -485,7 +488,7 @@
             color: white;
             font-weight: 600;
             padding: 0.85rem 1.75rem;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(30, 77, 59, 0.3);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -511,7 +514,7 @@
 
         .save-contact-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 25px rgba(30, 77, 59, 0.4);
         }
         
         .save-contact-btn:active {
@@ -520,7 +523,11 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: var(--gradient-primary);
+            background:
+                radial-gradient(circle at 15% 10%, rgba(212, 162, 76, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 85% 90%, rgba(63, 122, 92, 0.25) 0%, transparent 50%),
+                linear-gradient(160deg, #123527 0%, #1e4d3b 45%, #2c5c47 100%);
+            background-attachment: fixed;
             color: #333;
             min-height: 100vh;
         }
@@ -528,8 +535,11 @@
         .main-container {
             max-width: 480px;
             margin: 1rem auto;
-            background: white;
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 24px;
             overflow: hidden;
             box-shadow: var(--shadow-xl);
             position: relative;
@@ -542,13 +552,13 @@
             left: 0;
             right: 0;
             height: 300px;
-            background: linear-gradient(180deg, rgba(139, 21, 56, 0.03) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(30, 77, 59, 0.04) 0%, transparent 100%);
             pointer-events: none;
             z-index: 0;
         }
 
         .header-section {
-            background: var(--gradient-secondary);
+            background: var(--gradient-primary);
             position: relative;
             overflow: hidden;
         }
@@ -558,7 +568,7 @@
             position: absolute;
             width: 300px;
             height: 300px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(212, 162, 76, 0.15);
             border-radius: 50%;
             top: -150px;
             right: -150px;
@@ -609,14 +619,16 @@
         }
 
         .therapists-section {
-            background: linear-gradient(135deg, #fce7f3 0%, #f9a8d4 20%);
+            background: linear-gradient(135deg, #eaf1ec 0%, #d7e5da 100%);
             border-radius: var(--border-radius);
             border-left: 5px solid var(--secondary-color);
             box-shadow: var(--shadow-sm);
         }
 
         .info-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             border-radius: var(--border-radius);
             border-left: 5px solid var(--secondary-color);
             transition: var(--transition);
@@ -632,7 +644,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--light-pink);
+            background: var(--light-cream);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -660,7 +672,8 @@
         }
 
         .schedule-card {
-            background: linear-gradient(135deg, #fce7f3 0%, #f9a8d4 100%);
+            background: linear-gradient(135deg, #eaf1ec 0%, #d7e5da 100%);
+            border: 1px solid rgba(30, 77, 59, 0.1);
             border-radius: var(--border-radius);
             color: var(--primary-color);
             font-weight: 700;
@@ -674,7 +687,8 @@
         }
 
         .location-card {
-            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            background: linear-gradient(135deg, #f6f2e7 0%, #eee7d4 100%);
+            border: 1px solid rgba(184, 130, 58, 0.15);
             border-radius: var(--border-radius);
             color: var(--primary-color);
             box-shadow: var(--shadow-sm);
@@ -687,7 +701,8 @@
         }
 
         .contact-card {
-            background: linear-gradient(135deg, #f3e8ff 0%, #fce7f3 100%);
+            background: linear-gradient(135deg, #f2ead4 0%, #e9e0c6 100%);
+            border: 1px solid rgba(30, 77, 59, 0.1);
             border-radius: var(--border-radius);
             color: var(--primary-color);
             box-shadow: var(--shadow-sm);
@@ -802,14 +817,14 @@
         }
 
         .web-btn {
-            background: linear-gradient(135deg, #2196f3, #1976d2);
+            background: linear-gradient(135deg, #3f7a70, #2c5c47);
             border: none;
             border-radius: 30px;
             color: white;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.3);
+            box-shadow: 0 6px 20px rgba(63, 122, 112, 0.3);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -835,7 +850,7 @@
 
         .web-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(33, 150, 243, 0.5);
+            box-shadow: 0 10px 30px rgba(63, 122, 112, 0.5);
         }
 
         .whatsapp-float {
@@ -912,12 +927,12 @@
         }
 
         .accordion-button:focus {
-            box-shadow: 0 0 0 0.25rem rgba(139, 21, 56, 0.25);
+            box-shadow: 0 0 0 0.25rem rgba(30, 77, 59, 0.25);
             border-color: var(--primary-color);
         }
 
         .accordion-body {
-            background: linear-gradient(135deg, #fdf2f8 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #f6f2e7 0%, #ffffff 100%);
             color: #333;
             padding: 1.5rem;
             line-height: 1.7;
@@ -933,7 +948,7 @@
         }
 
         .info-alert {
-            background: linear-gradient(135deg, #fdf2f8 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #f6f2e7 0%, #ffffff 100%);
             border: 2px solid var(--accent-color);
             color: var(--primary-color);
             border-radius: var(--border-radius);
@@ -957,7 +972,7 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(139, 21, 56, 0.05) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(30, 77, 59, 0.05) 0%, transparent 70%);
             animation: none;
         }
         
@@ -1008,7 +1023,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 20px rgba(139, 21, 56, 0.3);
+            box-shadow: 0 6px 20px rgba(30, 77, 59, 0.3);
             z-index: 1049;
             transition: var(--transition);
             cursor: pointer;
@@ -1016,7 +1031,7 @@
 
         .qr-floating:hover {
             transform: scale(1.15) rotate(-5deg);
-            box-shadow: 0 10px 30px rgba(139, 21, 56, 0.5);
+            box-shadow: 0 10px 30px rgba(30, 77, 59, 0.5);
         }
 
         .qr-floating img { 
@@ -1074,7 +1089,7 @@
 
         .btn-descuento:hover {
             transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.5);
+            box-shadow: 0 10px 30px rgba(184, 130, 58, 0.5);
         }
 
         .btn-patologias {
@@ -1087,7 +1102,7 @@
             background: var(--primary-color);
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 6px 14px rgba(139, 21, 56, 0.3);
+            box-shadow: 0 6px 14px rgba(30, 77, 59, 0.3);
         }
     
 /* MOBILE PERFORMANCE OPTIMIZATION */
@@ -1241,7 +1256,7 @@ img {
                         <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
                             <div class="accordion-body">
                                 <div class="text-center mb-3">
-                                    <img src="images/IMG-20210618-WA0042.jpg" alt="Beneficios del Biomagnetismo Médico" class="img-fluid rounded" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(139, 21, 56, 0.2);">
+                                    <img src="images/IMG-20210618-WA0042.jpg" alt="Beneficios del Biomagnetismo Médico" class="img-fluid rounded" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(30, 77, 59, 0.2);">
                                 </div>
                                 <p>El biomagnetismo médico es un sistema terapéutico en el que se utilizan imanes para combatir parásitos, bacterias, hongos, virus y otros gérmenes que son la causa de diversas enfermedades.</p>
                                 <p>Los imanes se aplican en diversas zonas del cuerpo, como si se tratara de un rastreo o escaneo. Una vez reconocidos los órganos y tejidos que sufren una distorsión, el terapeuta aplica un conjunto de imanes en esos puntos durante 10 a 15 minutos a cada persona.</p>
@@ -1259,7 +1274,7 @@ img {
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
                             <div class="accordion-body">
                                 <div class="text-center mb-3">
-                                    <img src="images/IMG-20210618-WA0065.jpg" alt="Beneficios del Biomagnetismo" class="img-fluid rounded" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(139, 21, 56, 0.2);">
+                                    <img src="images/IMG-20210618-WA0065.jpg" alt="Beneficios del Biomagnetismo" class="img-fluid rounded" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(30, 77, 59, 0.2);">
                                 </div>
                                 <ol class="mb-0">
                                     <li class="mb-2">Es compatible con cualquier otra forma de terapia alternativa y también puede utilizarse simultáneamente con tratamientos alopáticos tradicionales.</li>
@@ -1283,7 +1298,7 @@ img {
                         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
                             <div class="accordion-body">
                                 <div class="text-center mb-3">
-                                    <img src="images/71YhcmliLdL._UF350,350_QL80_.jpg" alt="Beneficios del Biomagnetismo Médico" class="img-fluid rounded" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(139, 21, 56, 0.2);">
+                                    <img src="images/71YhcmliLdL._UF350,350_QL80_.jpg" alt="Beneficios del Biomagnetismo Médico" class="img-fluid rounded" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(30, 77, 59, 0.2);">
                                 </div>
                                 <p class="mb-0">Los beneficios de este tipo de terapias son cada vez menos discutidos y poco a poco se han ido complementando con tratamientos tradicionales para combatir enfermedades tan complicadas como el cáncer.</p>
                             </div>
@@ -1389,7 +1404,7 @@ img {
                 <div class="schedule-card text-center p-3 mb-3" id="dateSection">
                     <h5 class="mb-2"><i class="fas fa-calendar me-2"></i>Agenda del Mes</h5>
                     <div id="dateText">
-                        <p class="mb-1"><strong>🔴La Rioja Capital:</strong> 18, 19 y 20 de Febrero de Febrero</p>
+                        <p class="mb-1"><strong>🔴La Rioja Capital:</strong> 17, 18 y 19 de Agosto</p>
                         
                         <p class="mb-0"><strong>🔵Valle Hermoso, CBA:</strong> Resto del mes</p>
                     </div>
@@ -1437,8 +1452,8 @@ img {
                     </button>
                 </div>
 
-                <div class="text-center p-3 mb-3 animate-in" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 15px; border-left: 5px solid #2196f3;">
-                    <h5 class="mb-3" style="color: #1976d2;">
+                <div class="text-center p-3 mb-3 animate-in" style="background: linear-gradient(135deg, #f2ead4 0%, #e4d9b8 100%); border-radius: 15px; border-left: 5px solid #3f7a70;">
+                    <h5 class="mb-3" style="color: #2c5c47;">
                         <i class="fas fa-globe me-2"></i>Más Información
                     </h5>
                     <button class="btn web-btn px-4 py-2" onclick="window.open('https://gerardodamian.github.io/Biomagnetismo-Medicinal/', '_blank')">
